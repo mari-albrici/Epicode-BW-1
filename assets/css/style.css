@@ -430,6 +430,7 @@ svg {
     border-bottom: solid 2px  #d20094;
     color: white;
     margin: 10px 0 50px 0;
+    font-size: 1.2em;
 }
 .input_footer:focus {
     outline: none;
