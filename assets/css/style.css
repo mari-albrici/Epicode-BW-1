@@ -125,6 +125,15 @@ label > #checkbox{
     margin: 0.2rem;
 }
 
+.ansBtn:hover{
+    color: white;
+    background-color: #d20094;
+}
+
+.ansBtncheck{
+    background-color: #d20094;
+}
+
 .validateAns{
     text-align: right;
 }
