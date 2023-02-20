@@ -181,7 +181,7 @@ h1 p {
     grid-row: 1;
     place-self: center;
     animation: num 40s steps(1) infinite;
-    content: "0:" counter(s, decimal-leading-zero);
+    content: counter(s, decimal-leading-zero);
 }
 /*keyframes numerici per timer a schermo*/
 @keyframes num {
