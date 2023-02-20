@@ -173,6 +173,8 @@ h1 p {
     margin-right: 0;
     width: 100px;
     height: 100px;
+    font-family: 'Outfit', sans-serif;
+    font-size: xx-large;
 }
 .countdown::after {
     grid-column: 1;
