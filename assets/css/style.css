@@ -34,6 +34,6 @@ button {
 button:hover {
     background-color: #0ff;
     color: black;
-    box-shadow: 12px 12px 8px #0ff, -12px -12px 8px #0ff, 12px -12px 8px #0ff, -12px 12px 8px #0ff;
+    box-shadow: 10px 10px 8px #0ff, -10px -10px 8px #0ff, 10px -10px 8px #0ff, -10px 10px 8px #0ff;
     border: none;
 }
