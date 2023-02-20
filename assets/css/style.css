@@ -491,6 +491,7 @@ svg {
     color: white;
     margin: 10px 0 50px 0;
     font-size: 1.2em;
+    font-family: 'Outfit', sans-serif;
 }
 .input_footer:focus {
     outline: none;
