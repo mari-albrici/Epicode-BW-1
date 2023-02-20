@@ -99,10 +99,13 @@ label > #checkbox{
     text-align: center;
 }
 .ansbox{
-   
+    text-align: center;
 }
 .ansBtn{
-margin: 0.2rem;
+    margin: 0.2rem;
+    
+    
+    
 }
 .firstrow{
 
