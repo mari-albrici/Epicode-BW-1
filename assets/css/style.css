@@ -99,6 +99,10 @@ label > #checkbox{
     margin-bottom: 5rem;
 }
 
+h1 p {
+    font-weight: bold;
+}
+
 .question{
     font-size: xx-large;
     text-align: center;
