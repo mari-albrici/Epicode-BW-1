@@ -83,13 +83,11 @@ li > span{
 #welcome-footer button {
     margin-right: 16%;
 }
-/* Checkbox che non diventa trasparente da rivedere
-label > #checkbox{
-    opacity: 1;
+/* colore background rimane bianco
+ #checkbox{
     background-color: transparent;
 }
 */
-
 
 
 
