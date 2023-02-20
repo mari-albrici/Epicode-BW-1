@@ -94,8 +94,24 @@ label > #checkbox{
 
 
 /*TEST*/
+.question{
+    text-align: center;
+}
+.ansbox{
+   
+}
+.ansBtn{
+margin: 0.2rem;
+}
+.firstrow{
 
+}
+.secondrow{
 
+}
+.validateAns{
+    
+}
 
 /*RESULT*/
 
