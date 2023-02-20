@@ -183,7 +183,7 @@ h1 p {
     animation: num 40s steps(1) infinite;
     content: "0:" counter(s, decimal-leading-zero);
 }
-
+/*keyframes numerici per timer a schermo*/
 @keyframes num {
     0% {
     counter-reset: s 40;
@@ -325,7 +325,7 @@ svg {
     animation: arc 40s linear infinite;
     animation-name: arc, col;
 }
-
+/*keyframes per cambio colore del timer*/
 @keyframes arc {
     0% {
     stroke-dashoffset: 0px;
