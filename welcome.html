@@ -17,21 +17,21 @@
     <img src="assets/img/epicode_logo.png" alt="epicode_logo" id="logo">
     </header>
 
-    <main>
-    <h1>Welcome to <span>your exam</span></h1>
+    <main id="welcome-main">
+    <h1 id="welcome-heading">Welcome to <p>your exam</p></h1>
     <h2>Instructions</h2>
-    <p>We don't expect most engineers to know the answers to all of these questions,so don't worry if you're unsure of a few of them</p>
+    <p class="text">We don't expect most engineers to know the answers to all of these <br> questions,so don't worry if you're unsure of a few of them.</p>
     <ul>
-        <li>Each question is <span>timed</span> and can only be <span>answered once</span></li>
-        <li>Changing broeser tab or opening other windows will <span> the questions</span></li>
-        <li>This exam will take approx. <span>0-5 minutes</span></li>
+        <li class="text">Each question is <span>timed</span> and can only be <span>answered once</span></li>
+        <li class="text">Changing broeser tab or opening other windows will <span> the questions</span></li>
+        <li class="text">This exam will take approx. <span>0-5 minutes</span></li>
     </ul>
     </main>
 
     
-    <div> <!--L'idea è di mettere il div inline-->
+    <div id="welcome-footer"> <!--L'idea è di mettere il div inline-->
         <label for="checkbox">
-            <input type="checkbox" id="checkbox">
+            <input type="checkbox" id="checkbox" required>
             <span>I promise to answer myself without help from anyone</span>
         </label>
         <button>Proceed</button>
