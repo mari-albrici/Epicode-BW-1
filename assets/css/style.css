@@ -42,54 +42,66 @@ button:hover {
 
 
 /*WELCOME*/
-#welcome-heading{
+#welcome-heading {
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 64px;
 }
-#welcome-heading > p{
+
+#welcome-heading>p {
     font-weight: bold;
 }
-#welcome-main > h2{
-    color:rgb(202, 71, 202) ;
+
+#welcome-main>h2 {
+    color: rgb(202, 71, 202);
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 10px;
 }
-.text{
+
+.text {
     font-size: 18px;
 }
-ul{
+
+ul {
     margin-top: 30px;
     margin-bottom: 80px;
     list-style-type: disc;
-    color:white;
+    color: white;
 }
-ul > li{
+
+ul>li {
     margin-bottom: 8px;
     margin-left: 30px;
 }
-li > span{
+
+li>span {
     font-weight: bold;
 }
-#welcome-footer{
+
+#welcome-footer {
     display: flex;
     justify-content: space-between;
 }
-#welcome-footer span{
-    font-size:18px;
+
+#welcome-footer span {
+    font-size: 18px;
     font-weight: bold;
 }
+
 #welcome-footer button {
     margin-right: 16%;
 }
-#proceed{
+
+#proceed {
     color: white;
     text-decoration: none;
 }
-#proceed:hover{
+
+#proceed:hover {
     color: black;
 }
+
 /* colore background rimane bianco
  #checkbox{
     background-color: transparent;
@@ -100,7 +112,7 @@ li > span{
 
 /*TEST*/
 
-.exambox{
+.exambox {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
@@ -109,59 +121,60 @@ h1 p {
     font-weight: bold;
 }
 
-.question{
+.question {
     font-size: xx-large;
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
-.ansbox{
+.ansbox {
     text-align: center;
 }
-.ansBtn{
+
+.ansBtn {
     width: 380px;
     margin: 0.2rem;
     max-width: 400px;
     border-radius: 30px;
 }
 
-.firstrow{
+.firstrow {
     margin-bottom: 20px;
 }
 
-.secondrow{
+.secondrow {
     align-items: stretch;
-    
+
 }
 
-.ansBtn{
+.ansBtn {
     margin: 0.2rem;
 }
 
-.ansBtn:hover{
+.ansBtn:hover {
     color: white;
     background-color: #d20094;
 }
 
-.ansBtncheck{
+.ansBtncheck {
     background-color: #d20094;
 }
 
-.validateAns{
+.validateAns {
     text-align: right;
 }
 
-.counter{
+.counter {
     text-align: center;
     margin-top: 3rem;
 }
 
-.counter{
+.counter {
     text-transform: uppercase;
     font-weight: 600;
 }
 
-.questionsLeft{
+.questionsLeft {
     color: #d20094;
 }
 
@@ -176,6 +189,7 @@ h1 p {
     font-family: 'Outfit', sans-serif;
     font-size: xx-large;
 }
+
 .countdown::after {
     grid-column: 1;
     grid-row: 1;
@@ -183,132 +197,174 @@ h1 p {
     animation: num 40s steps(1) infinite;
     content: counter(s, decimal-leading-zero);
 }
+
 /*keyframes numerici per timer a schermo*/
 @keyframes num {
     0% {
-    counter-reset: s 40;
-}
-    2.5%{
-    counter-reset: s 39;
-}
+        counter-reset: s 40;
+    }
+
+    2.5% {
+        counter-reset: s 39;
+    }
+
     5% {
-    counter-reset: s 38;
-}
-    7.5%{
+        counter-reset: s 38;
+    }
+
+    7.5% {
         counter-reset: s 37;
-}
+    }
+
     10% {
-    counter-reset: s 36;
-}
+        counter-reset: s 36;
+    }
+
     12.5% {
-    counter-reset: s 35;
-}
+        counter-reset: s 35;
+    }
+
     15% {
-    counter-reset: s 34;
-}
+        counter-reset: s 34;
+    }
+
     17.5% {
-    counter-reset: s 33;
-}
+        counter-reset: s 33;
+    }
+
     20% {
-    counter-reset: s 32;
-}
+        counter-reset: s 32;
+    }
+
     22.5% {
-    counter-reset: s 31;
-}
+        counter-reset: s 31;
+    }
+
     25% {
-    counter-reset: s 30;
-}
+        counter-reset: s 30;
+    }
+
     27.5% {
-    counter-reset: s 29;
-}
+        counter-reset: s 29;
+    }
+
     30% {
-    counter-reset: s 28;
-}
+        counter-reset: s 28;
+    }
+
     32.5% {
-    counter-reset: s 27;
-}
+        counter-reset: s 27;
+    }
+
     35% {
-    counter-reset: s 26;
-}
+        counter-reset: s 26;
+    }
+
     37.5% {
-    counter-reset: s 25;
-}
+        counter-reset: s 25;
+    }
+
     40% {
-    counter-reset: s 24;
-}
+        counter-reset: s 24;
+    }
+
     42.5% {
-    counter-reset: s 23;
-}
+        counter-reset: s 23;
+    }
+
     45% {
-    counter-reset: s 22;
-}
+        counter-reset: s 22;
+    }
+
     47.5% {
-    counter-reset: s 21;
-}
+        counter-reset: s 21;
+    }
+
     50% {
-    counter-reset: s 20;
-}
+        counter-reset: s 20;
+    }
+
     52.5% {
-    counter-reset: s 19;
-}
+        counter-reset: s 19;
+    }
+
     55% {
-    counter-reset: s 18;
-}
+        counter-reset: s 18;
+    }
+
     60% {
-    counter-reset: s 17;
+        counter-reset: s 17;
     }
+
     62.5% {
-    counter-reset: s 16;
+        counter-reset: s 16;
     }
+
     65% {
-    counter-reset: s 15;
+        counter-reset: s 15;
     }
+
     67.5% {
-    counter-reset: s 14;
+        counter-reset: s 14;
     }
+
     70% {
-    counter-reset: s 13;
+        counter-reset: s 13;
     }
+
     72.5% {
-    counter-reset: s 12;
+        counter-reset: s 12;
     }
+
     75% {
-    counter-reset: s 11;
+        counter-reset: s 11;
     }
+
     77.5% {
-    counter-reset: s 10;
+        counter-reset: s 10;
     }
+
     80% {
-    counter-reset: s 9;
+        counter-reset: s 9;
     }
+
     82.5% {
-    counter-reset: s 8;
+        counter-reset: s 8;
     }
+
     85% {
-    counter-reset: s 7;
+        counter-reset: s 7;
     }
+
     87.5% {
-    counter-reset: s 6;
+        counter-reset: s 6;
     }
+
     90% {
-    counter-reset: s 5;
+        counter-reset: s 5;
     }
+
     92.5% {
-    counter-reset: s 4;
+        counter-reset: s 4;
     }
+
     95% {
-    counter-reset: s 3;
+        counter-reset: s 3;
     }
+
     97.5% {
-    counter-reset: s 2;
+        counter-reset: s 2;
     }
+
     99% {
-    counter-reset: s 1;
-        }
+        counter-reset: s 1;
+    }
+
     100% {
-    counter-reset: s 0;
+        counter-reset: s 0;
     }
 }
+
 svg {
     grid-column: 1;
     grid-row: 1;
@@ -318,35 +374,42 @@ svg {
     fill: none;
     stroke: silver;
 }
-[r] + [r] {
+
+[r]+[r] {
     transform: rotate(-90deg);
     stroke-linecap: round;
     stroke: #00ffff;
     animation: arc 40s linear infinite;
     animation-name: arc, col;
 }
+
 /*keyframes per cambio colore del timer*/
 @keyframes arc {
     0% {
-    stroke-dashoffset: 0px;
+        stroke-dashoffset: 0px;
+    }
 }
-}
+
 @keyframes col {
     0% {
-    stroke: #00ffff;
-}
+        stroke: #00ffff;
+    }
+
     25% {
-    stroke: #00ffff;
-}
+        stroke: #00ffff;
+    }
+
     50% {
-    stroke: #00ffff;
-}
+        stroke: #00ffff;
+    }
+
     75% {
-    stroke: #d21212;
-}
+        stroke: #d21212;
+    }
+
     100% {
-    stroke: #d21212;
-}
+        stroke: #d21212;
+    }
 }
 
 /*RESULT*/
@@ -384,7 +447,7 @@ svg {
     justify-content: flex-end;
 }
 
-#correctPercentage{
+#correctPercentage {
     font-family: 'Outfit', sans-serif;
     font-size: 3rem;
     font-weight: 600;
@@ -435,25 +498,44 @@ svg {
     align-items: center;
 }
 
-#circle  {
+#wrapper {
+    position: relative;
+}
+
+#circleContent {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#circle {
     display: flex;
     justify-content: center;
 }
 
+#congrats {
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+}
+
 /*FEEDBACK*/
-.containar_principale{
+.containar_principale {
     padding: 10px;
     margin: 15px 0 15px 0;
 }
 
-#titolo{
+#titolo {
     display: flex;
     justify-content: center;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 2.3em;
 }
-#paragrafo{
+
+#paragrafo {
     font-family: 'Outfit', sans-serif;
     text-align: center;
     font-weight: 200;
@@ -461,16 +543,19 @@ svg {
     line-height: 1.2em;
     margin-top: 15px;
 }
-.containar_stelle{
+
+.containar_stelle {
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
 }
-.stella{
+
+.stella {
     width: 2.5em;
     margin: 0 5px 0 5px;
 }
-.paragrafo_footer{
+
+.paragrafo_footer {
     text-align: center;
     font-family: 'Outfit', sans-serif;
     font-weight: 200;
@@ -478,25 +563,29 @@ svg {
     padding: 5px;
     margin-bottom: 30px;
 }
-.containar_input{
+
+.containar_input {
     display: flex;
     justify-content: center;
 }
-.input_footer{
+
+.input_footer {
     height: 1.8em;
     width: 70em;
     background: none;
     border: none;
-    border-bottom: solid 2px  #d20094;
+    border-bottom: solid 2px #d20094;
     color: white;
     margin: 10px 0 50px 0;
     font-size: 1.2em;
     font-family: 'Outfit', sans-serif;
 }
+
 .input_footer:focus {
     outline: none;
 }
-.containar_button{
+
+.containar_button {
     display: flex;
     justify-content: center;
 }

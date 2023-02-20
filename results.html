@@ -33,15 +33,13 @@
                     <h3 id="correctPercentage"> 00.0% </h3>
                     <p id="correctQuestions"> 0/0 <span> questions </span></p>
                 </div>
-
-                <div>
-                    <progress-ring progress="85" id="circle"></progress-ring>
-                    <div id="centerMessage">
-                        <p> Congratulations! <span>You passed the exam.</span></p>
-                        <p>We'll send you the certificate in a few minutes. Check your email (including the
-                            promotions/spam
-                            folders)</p>
+                <div id="wrapper">
+                    <div id="circleContent"> 
+                        <p id="congrats">Congratulations! </p> 
+                        <p>You passed the exam </p>
+                        <p>We'll send you the certificate in a few minutes. Check your email (including the promotions/spam folder) </p>
                     </div>
+                    <progress-ring progress="85" id="circle"></progress-ring>
                 </div>
 
                 <div>
@@ -67,7 +65,7 @@
                 const normalizedRadius = radius - stroke * 2;
                 this._circumference = normalizedRadius * 2 * Math.PI;
 
-                this._root = this.attachShadow({ mode: 'open' });
+                this._root = this.attachShadow({mode: 'open'});
                 this._root.innerHTML = `<svg height="${radius * 2}" width="${radius * 2}">
                                         <circle
                                             stroke="#00ffff"
@@ -108,7 +106,7 @@
 
         window.customElements.define('progress-ring', ProgressRing);
 
-        let progress = 40;
+        let progress = 0
         const el = document.querySelector('progress-ring');
 
         const interval = setInterval(() => {
@@ -116,7 +114,7 @@
             el.setAttribute('progress', progress);
             if (progress === 100)
                 clearInterval(interval);
-        }, 0500);
+        }, 0050);
 
 
     </script>
