@@ -5,6 +5,7 @@ body {
     background-size: cover;
     font-family: 'Inter', sans-serif;
     font-family: 'Outfit', sans-serif;
+    color: white;
 }
 
 #pagina {
@@ -16,4 +17,21 @@ body {
 
 #logo {
     width: 250px;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid white;
+    height: 60px;
+    width: 200px;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #0ff;
+    color: black;
+    box-shadow: 12px 12px 8px #0ff, -12px -12px 8px #0ff, 12px -12px 8px #0ff, -12px 12px 8px #0ff;
 }
