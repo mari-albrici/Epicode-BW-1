@@ -35,9 +35,10 @@
                 </div>
                 <div id="wrapper">
                     <div id="circleContent"> 
-                        <p id="congrats">Congratulations! </p> 
-                        <p>You passed the exam </p>
-                        <p>We'll send you the certificate in a few minutes. Check your email (including the promotions/spam folder) </p>
+                        <p id="congrats"> Congratulations! </p>
+                        <p id="passed"> You passed the exam.</p>
+                        <p class="message"> We'll send you the certificate <br> in a few minutes. </p>
+                        <p class="message"> Check your email (including the promotions/spam folder)</p>
                     </div>
                     <progress-ring progress="85" id="circle"></progress-ring>
                 </div>
@@ -50,8 +51,8 @@
             </div>
         </main>
 
-        <div>
-            <button id="checkAnswers"> Check your answers </button>
+        <div id="checkAnswers">
+            <button> Check answers </button>
         </div>
     </div>
 
@@ -117,6 +118,22 @@
         }, 0050);
 
 
+/* PER SELEZIONARE TESTO DA PRESENTARE NEL CIRCLE IN BASE AL SUPERAMENTO O MENO DEL TEST
+
+let congratsMessage = document.getElementById('congrats')
+let underTitle = document.getElementById('passed');
+let message = document.getElementById('message');
+
+        if (progress => 60) {
+            congratsMessage.innerHTML = 'Congratulations!'
+            underTitle.innerHTML = 'You passed the exam.'
+            message.innerHTML = 'We'll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
+        } else {
+            congratsMessage.innerHTML = 'We're sorry'
+            underTitle.innerHTML = 'You did not pass the exam.'
+            message.innerHTML = 'Check your email (including the promotions/spam folder)'
+        }
+*/
     </script>
 </body>
 
