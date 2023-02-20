@@ -235,4 +235,60 @@ label > #checkbox{
 }
 
 /*FEEDBACK*/
+.containar_principale{
+    padding: 10px;
+    margin: 15px 0 15px 0;
+}
 
+#titolo{
+    display: flex;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 2.3em;
+}
+#paragrafo{
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    margin-top: 15px;
+}
+.containar_stelle{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+}
+.stella{
+    width: 2.5em;
+    margin: 0 5px 0 5px;
+}
+.paragrafo_footer{
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 200;
+    font-size: 1.2em;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.containar_input{
+    display: flex;
+    justify-content: center;
+}
+.input_footer{
+    height: 1.8em;
+    width: 70em;
+    background: none;
+    border: none;
+    border-bottom: solid 2px  #d20094;
+    color: white;
+    margin: 10px 0 50px 0;
+}
+.input_footer:focus {
+    outline: none;
+}
+.containar_button{
+    display: flex;
+    justify-content: center;
+}
