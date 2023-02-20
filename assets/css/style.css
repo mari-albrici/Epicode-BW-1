@@ -359,6 +359,17 @@ svg {
     align-items: center;
 }
 
+#middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle  {
+    display: flex;
+    justify-content: center;
+}
+
 /*FEEDBACK*/
 .containar_principale{
     padding: 10px;

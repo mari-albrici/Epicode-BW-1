@@ -27,37 +27,28 @@
                 <p id="underTitle">The summary of your answers:</p>
             </div>
 
-            <div>
-                <h2 id="correctTitle"> Correct </h2>
-                <h3 id="correctPercentage"> 00.0% </h3>
-                <p id="correctQuestions"> 0/0 questions </p>
-            </div>
-
-            <div>
-                <svg
-                class="progress-ring"
-                width="300"
-                height="300">
-               <circle
-                 class="progress-ring__circle"
-                 stroke="white"
-                 stroke-width="4"
-                 fill="transparent"
-                 r="80"
-                 cx="82"
-                 cy="82"/>
-             </svg>
-                <div id="centerMessage">
-                    <p> Congratulations! <span>You passed the exam.</span></p>
-                    <p>We'll send you the certificate in a few minutes. Check your email (including the promotions/spam
-                        folders)</p>
+            <div id="middle">
+                <div>
+                    <h2 id="correctTitle"> Correct </h2>
+                    <h3 id="correctPercentage"> 00.0% </h3>
+                    <p id="correctQuestions"> 0/0 questions </p>
                 </div>
-            </div>
 
-            <div>
-                <h2 id="wrongTitle"> Wrong </h2>
-                <h3 id="wrongPercentage"> 00.0% </h3>
-                <p id="wrongQuestions"> 0/0 questions </p>
+                <div>
+                    <progress-ring progress="85" id="circle"></progress-ring>
+                    <div id="centerMessage">
+                        <p> Congratulations! <span>You passed the exam.</span></p>
+                        <p>We'll send you the certificate in a few minutes. Check your email (including the
+                            promotions/spam
+                            folders)</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 id="wrongTitle"> Wrong </h2>
+                    <h3 id="wrongPercentage"> 00.0% </h3>
+                    <p id="wrongQuestions"> 0/0 questions </p>
+                </div>
             </div>
         </main>
 
@@ -65,6 +56,70 @@
             <button id="checkAnswers"> Check your answers </button>
         </div>
     </div>
+
+    <script>
+
+        class ProgressRing extends HTMLElement {
+            constructor() {
+                super();
+                const stroke = 60;
+                const radius = 325;
+                const normalizedRadius = radius - stroke * 2;
+                this._circumference = normalizedRadius * 2 * Math.PI;
+
+                this._root = this.attachShadow({ mode: 'open' });
+                this._root.innerHTML = `<svg height="${radius * 2}" width="${radius * 2}">
+                                        <circle
+                                            stroke="#00ffff"
+                                            stroke-dasharray="${this._circumference} ${this._circumference}"
+                                            style="stroke-dashoffset:${this._circumference}"
+                                            stroke-width="${stroke}"
+                                            fill="transparent"
+                                            r="${normalizedRadius}"
+                                            cx="${radius}"
+                                            cy="${radius}"/>
+                                        </svg>
+
+                                        <style>
+                                            circle {
+                                            transition: stroke-dashoffset 0.35s;
+                                            transform: rotate(-90deg);
+                                            transform-origin: 50% 50%;
+                                            }
+                                        </style>`;
+            }
+
+            setProgress(percent) {
+                const offset = this._circumference - (percent / 100 * this._circumference);
+                const circle = this._root.querySelector('circle');
+                circle.style.strokeDashoffset = offset;
+            }
+
+            static get observedAttributes() {
+                return ['progress'];
+            }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (name === 'progress') {
+                    this.setProgress(newValue);
+                }
+            }
+        }
+
+        window.customElements.define('progress-ring', ProgressRing);
+
+        let progress = 40;
+        const el = document.querySelector('progress-ring');
+
+        const interval = setInterval(() => {
+            progress += 2;
+            el.setAttribute('progress', progress);
+            if (progress === 100)
+                clearInterval(interval);
+        }, 0500);
+
+
+    </script>
 </body>
 
 </html>
