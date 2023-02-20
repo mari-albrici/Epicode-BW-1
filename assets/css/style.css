@@ -101,23 +101,23 @@ label > #checkbox{
 
 .question{
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .ansbox{
-   text-align: center;
+    text-align: center;
 }
 .ansBtn{
     margin: 0.2rem;
-    
-    
-    
+    max-width: 400px;
 }
-.firstrow{
 
+.firstrow{
+    
 }
 
 .secondrow{
-    align-content: center;
+    align-items: stretch;
     
 }
 
@@ -134,6 +134,14 @@ label > #checkbox{
     margin-top: 3rem;
 }
 
+.counter{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.questionsLeft{
+    color: #d20094;
+}
 /*RESULT*/
 
 #title {
