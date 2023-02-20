@@ -187,7 +187,9 @@ h1 p {
     width: 100px;
     height: 100px;
     font-family: 'Outfit', sans-serif;
-    font-size: xx-large;
+    font-size: x-large;
+    text-align: center;
+    align-items: center;
 }
 
 .countdown::after {
