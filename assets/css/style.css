@@ -108,12 +108,14 @@ label > #checkbox{
     text-align: center;
 }
 .ansBtn{
+    width: 380px;
     margin: 0.2rem;
     max-width: 400px;
+    border-radius: 30px;
 }
 
 .firstrow{
-    
+    margin-bottom: 20px;
 }
 
 .secondrow{
