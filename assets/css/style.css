@@ -1,0 +1,19 @@
+/* GENERALE */
+body {
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif;
+}
+
+#pagina {
+    padding-left: 100px;
+    padding-top: 80px;
+    padding-right: 100px;
+    padding-bottom: 80px;
+}
+
+#logo {
+    width: 250px;
+}
