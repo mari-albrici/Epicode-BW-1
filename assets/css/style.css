@@ -180,74 +180,134 @@ h1 p {
     grid-column: 1;
     grid-row: 1;
     place-self: center;
-    animation: num 20s steps(1) infinite;
+    animation: num 40s steps(1) infinite;
     content: "0:" counter(s, decimal-leading-zero);
 }
 
 @keyframes num {
     0% {
-    counter-reset: s 20;
+    counter-reset: s 40;
+}
+    2.5%{
+    counter-reset: s 39;
 }
     5% {
-    counter-reset: s 19;
+    counter-reset: s 38;
+}
+    7.5%{
+        counter-reset: s 37;
 }
     10% {
-    counter-reset: s 18;
+    counter-reset: s 36;
+}
+    12.5% {
+    counter-reset: s 35;
 }
     15% {
-    counter-reset: s 17;
+    counter-reset: s 34;
+}
+    17.5% {
+    counter-reset: s 33;
 }
     20% {
-    counter-reset: s 16;
+    counter-reset: s 32;
+}
+    22.5% {
+    counter-reset: s 31;
 }
     25% {
-    counter-reset: s 15;
+    counter-reset: s 30;
+}
+    27.5% {
+    counter-reset: s 29;
 }
     30% {
-    counter-reset: s 14;
+    counter-reset: s 28;
+}
+    32.5% {
+    counter-reset: s 27;
 }
     35% {
-    counter-reset: s 13;
+    counter-reset: s 26;
+}
+    37.5% {
+    counter-reset: s 25;
 }
     40% {
-    counter-reset: s 12;
+    counter-reset: s 24;
+}
+    42.5% {
+    counter-reset: s 23;
 }
     45% {
-    counter-reset: s 11;
+    counter-reset: s 22;
+}
+    47.5% {
+    counter-reset: s 21;
 }
     50% {
-    counter-reset: s 10;
+    counter-reset: s 20;
+}
+    52.5% {
+    counter-reset: s 19;
 }
     55% {
-    counter-reset: s 9;
+    counter-reset: s 18;
 }
     60% {
-    counter-reset: s 8;
-}
+    counter-reset: s 17;
+    }
+    62.5% {
+    counter-reset: s 16;
+    }
     65% {
-    counter-reset: s 7;
-}
+    counter-reset: s 15;
+    }
+    67.5% {
+    counter-reset: s 14;
+    }
     70% {
-    counter-reset: s 6;
-}
+    counter-reset: s 13;
+    }
+    72.5% {
+    counter-reset: s 12;
+    }
     75% {
-    counter-reset: s 5;
-}
+    counter-reset: s 11;
+    }
+    77.5% {
+    counter-reset: s 10;
+    }
     80% {
-    counter-reset: s 4;
-}
+    counter-reset: s 9;
+    }
+    82.5% {
+    counter-reset: s 8;
+    }
     85% {
-    counter-reset: s 3;
-}
+    counter-reset: s 7;
+    }
+    87.5% {
+    counter-reset: s 6;
+    }
     90% {
-    counter-reset: s 2;
-}
+    counter-reset: s 5;
+    }
+    92.5% {
+    counter-reset: s 4;
+    }
     95% {
+    counter-reset: s 3;
+    }
+    97.5% {
+    counter-reset: s 2;
+    }
+    99% {
     counter-reset: s 1;
-}
+        }
     100% {
     counter-reset: s 0;
-}
+    }
 }
 svg {
     grid-column: 1;
@@ -262,7 +322,7 @@ svg {
     transform: rotate(-90deg);
     stroke-linecap: round;
     stroke: #00ffff;
-    animation: arc 20s linear infinite;
+    animation: arc 40s linear infinite;
     animation-name: arc, col;
 }
 
