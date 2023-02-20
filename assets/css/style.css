@@ -83,6 +83,13 @@ li > span{
 #welcome-footer button {
     margin-right: 16%;
 }
+#proceed{
+    color: white;
+    text-decoration: none;
+}
+#proceed:hover{
+    color: black;
+}
 /* colore background rimane bianco
  #checkbox{
     background-color: transparent;
