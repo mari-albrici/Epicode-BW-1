@@ -45,10 +45,10 @@ class ProgressRing extends HTMLElement {
     }
 }
 
-window.customElements.define('progress-ring', ProgressRing);
+window.customElements.define('progressRing', ProgressRing);
 
 let progress = 0
-const el = document.querySelector('progress-ring');
+const el = document.querySelector('progressRing');
 
 const interval = setInterval(() => {
     progress += 2;
