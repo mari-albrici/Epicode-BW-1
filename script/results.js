@@ -1,20 +1,38 @@
+var circle = document.querySelector('circle');
+var radius = circle.r.baseVal.value;
+var circumference = radius * 2 * Math.PI;
 
-let resultMessage = document.getElementById('congrats')
-let underTitle = document.getElementById('passed');
-let finalMessage = document.getElementById('message');
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = `${circumference}`;
 
-let correctPercentage = document.getElementById('#correctPercentage');
-let wrongPercentage = document.getElementById('#wrongPercentage');
+function setProgress(percent) {
+    const offset = circumference - percent / 100 * circumference;
+    circle.style.strokeDashoffset = offset;
+}
+
+const input = document.querySelector('input');
+setProgress(input.value);
+
+input.addEventListener('change', function (e) {
+    if (input.value < 101 && input.value > 0) {
+        setProgress(input.value);
+    }
+})
+
+
+let correctPercentage = document.querySelector('input').value
+let topMessage = document.getElementById('#topMessage');
+let middleMessage = document.getElementById('#middleMessage');
+let underMessage = document.getElementById('#underMessage');
 
 function message() {
     if (correctPercentage => 60) {
-    resultMessage.innerHTML = 'Congratulations!'
-    underTitle.innerHTML = 'You passed the exam.'
-    finalMessage.innerHTML = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
-} else {
-    resultMessage.innerHTML = 'We\'re sorry'
-    underTitle.innerHTML = 'You did not pass the exam.'
-    finalMessage.innerHTML = 'Check your email (including the promotions/spam folder)'
-} 
+        topMessage.innerHTML = 'Congratulations!'
+        middleMessage.innerHTML = 'You passed the exam.'
+        underMessage.innerHTML = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
+    } else {
+        topMessage.innerHTML = 'We\'re sorry'
+        middleMessage.innerHTML = 'You did not pass the exam.'
+        underMessage.innerHTML = 'Check your email (including the promotions/spam folder)'
+    }
 }
-

@@ -545,6 +545,12 @@ svg {
     stroke-width: 65px;
     fill: transparent;
   }
+
+  input {
+    height: 40px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+  }
   
 
 /*FEEDBACK*/

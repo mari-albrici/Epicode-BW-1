@@ -35,7 +35,8 @@
 
                     <div>
                         <h2 id="correctTitle"> Correct </h2>
-                        <h3 id="correctPercentage" class="value-container"><input value="" type="number" min="0" max="100" placeholder="%"> </h3>
+                        <h3 id="correctPercentage" class="value-container"><input value="" type="number" min="0"
+                                max="100" placeholder="%"> </h3>
                         <p id="correctQuestions"> 0/0 <span> questions </span></p>
                     </div>
 
@@ -44,9 +45,9 @@
                             <circle class="progress-ring__circle" r="250" cx="330" cy="330" />
                         </svg>
                         <div id="message">
-                            <h3 class="topMessage">AAA</h3>
-                            <h3 class="middleMessage">BBB</h3>
-                            <p class="underMessage">CCC</p>
+                            <h3 class="topMessage"></h3>
+                            <h3 class="middleMessage"></h3>
+                            <p class="underMessage"></p>
                         </div>
                     </div>
 
@@ -64,31 +65,7 @@
         </div>
     </div>
 
-    <script>
-        var circle = document.querySelector('circle');
-        var radius = circle.r.baseVal.value;
-        var circumference = radius * 2 * Math.PI;
-
-        circle.style.strokeDasharray = `${circumference} ${circumference}`;
-        circle.style.strokeDashoffset = `${circumference}`;
-
-        function setProgress(percent) {
-            const offset = circumference - percent / 100 * circumference;
-            circle.style.strokeDashoffset = offset;
-        }
-
-        const input = document.querySelector('input');
-        setProgress(input.value);
-
-        input.addEventListener('change', function (e) {
-            if (input.value < 101 && input.value > 0) {
-                setProgress(input.value);
-            }
-        })
-
-
-
-    </script>
+    <script src="script/results.js"></script> 
 
 </body>
 
