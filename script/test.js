@@ -38,16 +38,23 @@ console.log(questions[3])
 
 
 
+
 class QuestionMarkI{
     
-
     
-
+    
+    
     pickQuestion(){
-
+        
     }
     
 }
+
+
+let numeroDomande = 0 // VARIABILE GLOBALE 
+ 
+
+
 //PICK RANDOM DELLE DOMANDE, FUNZIONA!
 function random(){
     let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
@@ -55,7 +62,16 @@ function random(){
     let randQ = indiceCasuale.question
     console.log(randQ)
     let qPick = document.querySelector('h1').innerHTML = randQ
+    //COUNTER DOMANDE CHE BISOGNA AGGANGIARE QUI X FORZA
+    numeroDomande++
+    let domandeFatte = document.querySelector(".questionsDone")
+    domandeFatte.textContent = numeroDomande
+    
 }
+
+
+
+
 random()
 
 function validate(){
