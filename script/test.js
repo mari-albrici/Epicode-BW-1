@@ -58,6 +58,20 @@ let numeroDomande = 0 // VARIABILE GLOBALE
 //PICK RANDOM DELLE DOMANDE, FUNZIONA!
 let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
     console.log(indiceCasuale)
+
+/*-----------------------------------------------*/
+//CREAZIONE HTML
+
+function createHTML(){
+    //box domanda
+    let areaTest = document.querySelector('.exambox');
+    let questionBox = document.createElement('div');
+    questionBox.classList.add('question');
+    areaTest.append(questionBox)
+    //box risposta giusta
+    
+}
+createHTML()
 /*-----------------------------------------------*/
     function random(){
     let randQ = indiceCasuale.question
@@ -66,6 +80,7 @@ let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
     numeroDomande++
     let domandeFatte = document.querySelector(".questionsDone")
     domandeFatte.textContent = numeroDomande
+    let qPick = document.querySelector('.question').innerHTML = randQ
 }
 
 
@@ -85,6 +100,18 @@ function answers(){
     let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
 }
 answers()
+//INSERIMENTO DELLE RISPOSTE NEI BOTTONI
+    function answers(){
+        let rAns = indiceCasuale.rightAnswer
+        let rAnsPick = document.querySelector('.rAnsBtn').innerHTML = rAns
+        let wAns0 = indiceCasuale.wrongAnswers[0]
+        let wAnsPick1 = document.querySelector('#wa0').innerHTML = wAns0
+        let wAns1 = indiceCasuale.wrongAnswers[1]
+        let wAnsPick2 = document.querySelector('#wa1').innerHTML = wAns1
+        let wAns2 = indiceCasuale.wrongAnswers[2]
+        let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
+    }
+    answers()
 /*-----------------------------------------------*/
 function validate(){
         let nextQuestion = document.getElementById("nuova-domanda")
