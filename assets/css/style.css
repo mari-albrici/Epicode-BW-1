@@ -518,19 +518,9 @@ svg {
 
 #wrapper {
     position: relative;
-}
-
-#circleContent {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-#circle {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #congrats {
@@ -559,14 +549,20 @@ svg {
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
   }
+
+  circle {
+    stroke: #d20094;
+    stroke-width: 65px;
+    fill: transparent;
+  }
   
-  input {
+  /*input {
     position: fixed;
     top: 10px;
     left: 10px;
     width: 80px;
   }
-  
+  */
 
 /*FEEDBACK*/
 .containar_principale {
