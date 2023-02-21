@@ -1,0 +1,37 @@
+[
+    {
+        "question": "Qual'è la pizza preferita di Michele?",
+        "rightAnswer": "Diavola",
+        "wrongAnswers":["Margherita","Hawaiana", "Capricciosa"]
+    },
+    {
+        "question": "What does CPU stand for?",
+        "rightAnswer": "Central Processing Unit",
+        "wrongAnswers":["Central Process Unit","Computer Personal Unit","Central Processor Unit"]
+    },
+    {
+        "question": "In web design, what does CSS stand for?",
+        "rightAnswer": "Cascading Style Sheet",
+        "wrongAnswers":[ "Counter Strike: Source",
+        "Corrective Style Sheet",
+        "Computer Style Sheet"]
+    },
+    {
+        "question": "On Twitter, what is the character limit for a Tweet?",
+        "rightAnswer": "140",
+        "wrongAnswers":["120", "160", "100"]
+    },
+    {
+        "question": "Which programming language shares its name with an island in Indonesia?",
+        "rightAnswer": "Java",
+        "wrongAnswers":["Python", "C", "Jakarta"]
+    },
+    {
+        "question": "What is the code name for the mobile operating system Android 7.0?",
+        "rightAnswer": "Nougat",
+        "wrongAnswers":["Ice Cream Sandwich",
+        "Jelly Bean",
+        "Marshmallow"]
+    }
+    
+]
