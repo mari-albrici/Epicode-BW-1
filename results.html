@@ -34,13 +34,18 @@
                     <p id="correctQuestions"> 0/0 <span> questions </span></p>
                 </div>
                 <div id="wrapper">
-                    <div id="circleContent"> 
-                        <p id="congrats"> Congratulations! </p>
-                        <p id="passed"> You passed the exam.</p>
-                        <p class="message"> We'll send you the certificate <br> in a few minutes. </p>
-                        <p class="message"> Check your email (including the promotions/spam folder)</p>
+                    <div id="circleContent">
+                        <p id="congrats"> </p>
+                        <p id="passed"> </p>
+                        <p class="message"> </p>
+                        <p class="message"> </p>
                     </div>
-                    <progress-ring progress="85" id="circle"></progress-ring>
+                    <div id="progressRing">
+                        <svg>
+                            <circle cx="250" cy="250" r="120"></circle>
+                            <circle cx="250" cy="250" r="120"></circle>
+                        </svg>
+                    </div>
                 </div>
 
                 <div>
@@ -56,6 +61,7 @@
         </div>
     </div>
 
+    <script src="js/results.js"></script>
 </body>
 
 </html>
