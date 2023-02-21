@@ -39,11 +39,7 @@ console.log(questions[3])
 
 
 class QuestionMarkI{
-    /*constructor(q,rAns,wAns){
-        this.question= q;
-        this.rightAns = rAns;
-        this.wrongAns = wAns;
-    }*/
+    
 
     
 
@@ -52,6 +48,7 @@ class QuestionMarkI{
     }
     
 }
+//PICK RANDOM DELLE DOMANDE, FUNZIONA!
 function random(){
     let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
     console.log(indiceCasuale)
@@ -66,13 +63,6 @@ function validate(){
         nextQuestion.addEventListener("click",random)
     }
 validate()
-
-       // let domandaCasuale = questions.forEach(i => i.question = Math.floor(Math.random(i.question)))
-        
-
-
-QuestionMarkI.shuffleAndPick()
-//timer
 
 function timer(){
     

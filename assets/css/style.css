@@ -181,9 +181,9 @@ h1 p {
 /*TIMER*/
 
 .countdown {
-    display: grid;
+    display:grid;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: auto;
     width: 100px;
     height: 100px;
     font-family: 'Outfit', sans-serif;
