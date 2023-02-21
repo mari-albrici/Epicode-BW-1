@@ -511,32 +511,9 @@ svg {
     text-align: center;
 }
 
-#progressRing, svg, circle {
-    width: 500px;
-    height: 500px;
-}
-
-#progressRing circle:nth-child(2) {
-    stroke-dashoffset: calc(440 - (440 * 75) / 100);
-    stroke: gold;
-    animation: percent 1.5s linear;
-    animation-delay: 1s;
-}
-
-@keyframes percent {
-    0% {
-        stroke-dashoffset: 50;
-        stroke-width: 50;
-       }
-}
-
 #circle {
-    position: absolute;
-    fill: none;
-    stroke-width: 10;
-    transform: translate(-50%, -50%);
-    stroke-dasharray: 440;
-    stroke-linecap: round;
+    display: flex;
+    justify-content: center;
 }
 
 #congrats {
