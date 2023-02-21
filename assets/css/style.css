@@ -144,12 +144,14 @@ h1 p {
     max-width: 400px;
     border-radius: 30px;
 }
+
 .wa1 {
     width: 380px;
     margin: 0.2rem;
     max-width: 400px;
     border-radius: 30px;
 }
+
 .wa2 {
     width: 380px;
     margin: 0.2rem;
@@ -196,7 +198,7 @@ h1 p {
 /*TIMER*/
 
 .countdown {
-    display:grid;
+    display: grid;
     margin-left: auto;
     margin-right: 0;
     width: 100px;
@@ -551,6 +553,20 @@ svg {
     font-family: 'Outfit', sans-serif;
     line-height: 1.5rem;
 }
+
+.progress-ring__circle {
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  
+  input {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+  }
+  
 
 /*FEEDBACK*/
 .containar_principale {
