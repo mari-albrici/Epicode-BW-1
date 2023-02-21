@@ -45,33 +45,35 @@ class ProgressRing extends HTMLElement {
     }
 }
 
-window.customElements.define('progress-ring', ProgressRing);
+customElements.define('progress-ring', ProgressRing);
 
-
-let correctPercentage = document.getElementById('#correctPercentage');
-let wrongPercentage = document.getElementById('#wrongPercentage');
-
-let progress = correctPercentage
-const el = document.querySelector('progress-ring');
+let progress = 0
+const ring = document.querySelector('progress-ring');
 
 const interval = setInterval(() => {
     progress += 2;
-    el.setAttribute('progress', progress);
+    ring.setAttribute('progress', progress);
     if (progress === 100)
         clearInterval(interval);
 }, 0050);
 
 
-let congratsMessage = document.getElementById('congrats')
+let resultMessage = document.getElementById('congrats')
 let underTitle = document.getElementById('passed');
-let message = document.getElementById('message');
+let finalMessage = document.getElementById('message');
 
-if (progress => 60) {
-    congratsMessage.innerHTML = 'Congratulations!'
+let correctPercentage = document.getElementById('#correctPercentage');
+let wrongPercentage = document.getElementById('#wrongPercentage');
+
+function message() {
+    if (correctPercentage => 60) {
+    resultMessage.innerHTML = 'Congratulations!'
     underTitle.innerHTML = 'You passed the exam.'
-    message.innerHTML = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
+    finalMessage.innerHTML = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
 } else {
-    congratsMessage.innerHTML = 'We\'re sorry'
+    resultMessage.innerHTML = 'We\'re sorry'
     underTitle.innerHTML = 'You did not pass the exam.'
-    message.innerHTML = 'Check your email (including the promotions/spam folder)'
+    finalMessage.innerHTML = 'Check your email (including the promotions/spam folder)'
+} 
 }
+

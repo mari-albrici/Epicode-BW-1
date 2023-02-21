@@ -8,6 +8,7 @@
     <meta name="description" content="Here are your Epicode test results">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/progressring.css">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
     <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Outfit:wght@200;600&display=swap"
@@ -28,27 +29,33 @@
             </div>
 
             <div id="middle">
+
                 <div>
                     <h2 id="correctTitle"> Correct </h2>
-                    <h3 id="correctPercentage"> 00.0% </h3>
+                    <h3 id="correctPercentage"> 80.0 <span>%</span></h3>
                     <p id="correctQuestions"> 0/0 <span> questions </span></p>
                 </div>
-                <div id="wrapper">
-                    <div id="circleContent"> 
+
+                <!--<div id="wrapper">
+                    <div id="circleContent">
                         <p id="congrats"> Congratulations! </p>
                         <p id="passed"> You passed the exam.</p>
                         <p class="message"> We'll send you the certificate <br> in a few minutes. </p>
                         <p class="message"> Check your email (including the promotions/spam folder)</p>
                     </div>
                     <progress-ring progress="85" id="circle"></progress-ring>
-                </div>
+                </div>-->
+
+                <div class="progress"></div>
 
                 <div>
                     <h2 id="wrongTitle"> Wrong </h2>
-                    <h3 id="wrongPercentage"> 00.0% </h3>
+                    <h3 id="wrongPercentage"> 20.0 <span>%</span> </h3>
                     <p id="wrongQuestions"> 0/0 <span> questions </span></p>
                 </div>
+
             </div>
+
         </main>
 
         <div id="checkAnswers">
@@ -56,7 +63,9 @@
         </div>
     </div>
 
+
     <script src="script/results.js"> </script>
+
 </body>
 
 </html>
