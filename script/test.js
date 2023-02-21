@@ -70,7 +70,7 @@ function createHTML(){
     let svg = document.createElement('svg');
     let circle1 = document.createElement('circle');
     let circle2 = document.createElement('circle');
-    svg.setAttribute('viewBox',-50, -50, 100, 100);
+    svg.setAttribute('viewBox','-50 -50 100 100');
     svg.setAttribute('stroke-width',10);
     circle1.setAttribute('r',45);
     circle2.setAttribute('r',45);
@@ -79,7 +79,7 @@ function createHTML(){
     svg.append(circle1);
     svg.append(circle2);
     timerDiv.append(svg);
-    page.append(timerDiv)
+    page.append(timerDiv);
 
     //box domanda
     let exambox = document.querySelector('.exambox');
