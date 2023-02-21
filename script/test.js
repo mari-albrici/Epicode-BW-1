@@ -56,11 +56,14 @@ class QuestionMarkI{
     }
 
 }
+function random(){
 let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
 console.log(indiceCasuale)
 let randQ = indiceCasuale.question
 console.log(randQ)
-let qPick = document.querySelector('question').innerHTML = randQ
+let qPick = document.querySelector('h1').innerHTML = randQ
+}
+random()
 
 
        // let domandaCasuale = questions.forEach(i => i.question = Math.floor(Math.random(i.question)))
