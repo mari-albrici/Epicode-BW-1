@@ -522,7 +522,6 @@ svg {
     align-items: center;
 }
 
-
 #message {
     font-weight: 400;
     font-size: 1.2rem;
@@ -562,20 +561,25 @@ svg {
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     color: #00ffff;
-  }
+}
 
-  circle {
+circle {
     stroke: #00ffff;
     stroke-width: 65px;
     fill: transparent;
-  }
+}
 
-  input {
+[r] {
+    fill: none;
+    stroke: #00ffff;
+}
+
+input {
     height: 40px;
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
-  }
-  
+}
+
 
 /*FEEDBACK*/
 .containar_principale {
