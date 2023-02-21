@@ -131,11 +131,23 @@ h1 p {
     text-align: center;
 }
 
-.ansBtn {
+.rAnsBtn {
     width: 380px;
     margin: 0.2rem;
     max-width: 400px;
     border-radius: 30px;
+}
+
+.wAnsBtn {
+    width: 380px;
+    margin: 0.2rem;
+    max-width: 400px;
+    border-radius: 30px;
+}
+
+.ansBtn:hover {
+    color: white;
+    background-color: #d20094;
 }
 
 .firstrow {
@@ -145,15 +157,6 @@ h1 p {
 .secondrow {
     align-items: stretch;
 
-}
-
-.ansBtn {
-    margin: 0.2rem;
-}
-
-.ansBtn:hover {
-    color: white;
-    background-color: #d20094;
 }
 
 .ansBtncheck {
