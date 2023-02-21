@@ -10,7 +10,7 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-const input = document.querySelector('input');
+let input = document.querySelector('input');
 setProgress(input.value);
 
 input.addEventListener('change', function (e) {
@@ -20,19 +20,26 @@ input.addEventListener('change', function (e) {
 })
 
 
-let correctPercentage = document.querySelector('input').value
-let topMessage = document.getElementById('#topMessage');
-let middleMessage = document.getElementById('#middleMessage');
-let underMessage = document.getElementById('#underMessage');
+let topMessage = document.getElementById('topMessage'); 
+let middleMessage = document.getElementById('middleMessage');
+let underMessage = document.getElementById('underMessage');
 
-function message() {
-    if (correctPercentage => 60) {
-        topMessage.innerHTML = 'Congratulations!'
-        middleMessage.innerHTML = 'You passed the exam.'
-        underMessage.innerHTML = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
-    } else {
-        topMessage.innerHTML = 'We\'re sorry'
-        middleMessage.innerHTML = 'You did not pass the exam.'
-        underMessage.innerHTML = 'Check your email (including the promotions/spam folder)'
+input.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        let percentage = Number(input.value); 
+        function message() {
+            if (percentage >= 60) { 
+                topMessage.innerText = 'Congratulations!';
+                middleMessage.innerText = 'You passed the exam.';
+                underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
+            } else {
+                topMessage.innerText = 'We\'re sorry';
+                middleMessage.innerText = 'You did not pass the exam.';
+                underMessage.innerText = 'Check your email (including the promotions/spam folder)';
+            }
+        }
+        message();
     }
-}
+})
+
+
