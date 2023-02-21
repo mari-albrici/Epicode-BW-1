@@ -26,16 +26,16 @@
                     </p>
                 </div>
                 <div class="containar_stelle">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 1" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 2" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 3" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 4" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 5" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 6" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 7" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 8" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 9" type="image/svg">
-                    <img class="stella" src="./assets/img/star.svg" alt="stella 10" type="image/svg">
+                    <img class="stella" onclick="stella_click1(this)" src="./assets/img/star.svg" alt="stella 1" type="image/svg">
+                    <img class="stella" onclick="stella_click2(this)" src="./assets/img/star.svg" alt="stella 2" type="image/svg">
+                    <img class="stella" onclick="stella_click3(this)" src="./assets/img/star.svg" alt="stella 3" type="image/svg">
+                    <img class="stella" onclick="stella_click4(this)" src="./assets/img/star.svg" alt="stella 4" type="image/svg">
+                    <img class="stella" onclick="stella_click5(this)" src="./assets/img/star.svg" alt="stella 5" type="image/svg">
+                    <img class="stella" onclick="stella_click6(this)" src="./assets/img/star.svg" alt="stella 6" type="image/svg">
+                    <img class="stella" onclick="stella_click7(this)" src="./assets/img/star.svg" alt="stella 7" type="image/svg">
+                    <img class="stella" onclick="stella_click8(this)" src="./assets/img/star.svg" alt="stella 8" type="image/svg">
+                    <img class="stella" onclick="stella_click9(this)" src="./assets/img/star.svg" alt="stella 9" type="image/svg">
+                    <img class="stella" onclick="stella_click10(this)" src="./assets/img/star.svg" alt="stella 10" type="image/svg">
                 </div>
                 <div>
                     <p class="paragrafo_footer">
@@ -43,13 +43,26 @@
                     </p>
                 </div>
                 <div class="containar_input">
-                    <input class="input_footer" type="text" placeholder="Write vour comment here">
+                    <input oninput="testo(this)" class="input_footer" type="text" placeholder="Write vour comment here">
                 </div>
                 <div class="containar_button">
                     <button onclick="location.href='https://epicode.com/it/'" type="button"> MORE INFO</button>
                 </div>
             </main>
         </div>
-        <script></script>
+        <script>
+            let array_testo = []
+
+            function testo() {
+                let testo = ' ' + document.querySelector('input').value.padEnd(1);
+                document.querySelector('input').addEventListener('keypress', function salvare(ev) {
+                    if(ev.key === 'Enter'){
+                        array_testo.push(testo);
+                    }
+                })
+            }
+            
+            console.log(array_testo);
+        </script>
     </body>
 </html>
