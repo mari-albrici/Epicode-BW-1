@@ -141,12 +141,13 @@ function validate(){
 
         //creiamo nuove domande e risposte 
         indiceCasuale= questions[Math.floor(Math.random()* questions.length)]
+        //fin quando è < 6 il contatore
         if (numeroDomande < questions.length){
             createHTML()
             random()
             answers()
             numeroDomande++
-            //quando il contatore è a 6 
+            //quando il contatore è a 6 va da marianna 
         }else{
             window.location.href = "results.html"
         }
@@ -159,13 +160,13 @@ function validate(){
         setTimeout(function(){
             window.location.reload()
         },40000)
+        //funzione per il timer figurativa perchè non è effettivamente collegata al timer 
     })
     
     
 }
 validate()
 
-//funzione per il timer figurativa perchè non è effettivamente collegata al timer 
 
 
 
