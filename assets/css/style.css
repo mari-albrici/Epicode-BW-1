@@ -569,7 +569,9 @@ svg {
 .stella {
     width: 2.5em;
     margin: 0 5px 0 5px;
+    fill: #000;
 }
+
 
 .paragrafo_footer {
     text-align: center;
