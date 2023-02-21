@@ -134,15 +134,31 @@ function validate(){
     nextQuestion.addEventListener("click",function(){
         let exambox = document.querySelector(".exambox")
         exambox.innerHTML = "" 
-        createHTML()
+
+
+        //resetta il time ogni volta che clicckiamo "nuova-domanda"
+        clearTimeout()
+
+        //creiamo nuove domande e risposte 
         indiceCasuale= questions[Math.floor(Math.random()* questions.length)]
-        random()
-        answers()
+        if (numeroDomande < questions.length){
+            createHTML()
+            random()
+            answers()
+            numeroDomande++
+            //quando il contatore è a 6 
+        }else{
+            window.location.href = "results.html"
+        }
         
-        //COUNTER DOMANDE CHE BISOGNA AGGANGIARE QUI X FORZA
-        numeroDomande++
         let domandeFatte = document.querySelector(".questionsDone")
         domandeFatte.textContent = numeroDomande
+
+
+        //Refresh ogni 40 secondi
+        setTimeout(function(){
+            window.location.reload()
+        },40000)
     })
     
     
@@ -151,9 +167,6 @@ validate()
 
 //funzione per il timer figurativa perchè non è effettivamente collegata al timer 
 
-setTimeout(function(){
-    window.location.reload()
-},40000)
 
 
 
