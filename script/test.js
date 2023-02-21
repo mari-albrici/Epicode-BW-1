@@ -72,21 +72,19 @@ function createHTML(){
     
 }
 createHTML()
+
+
+
+
 /*-----------------------------------------------*/
     function random(){
     let randQ = indiceCasuale.question
-    let qPick = document.querySelector('h1').innerHTML = randQ
+    let qPick = document.querySelector('.question').innerHTML = randQ
     //COUNTER DOMANDE CHE BISOGNA AGGANGIARE QUI X FORZA
     numeroDomande++
     let domandeFatte = document.querySelector(".questionsDone")
     domandeFatte.textContent = numeroDomande
-    let qPick = document.querySelector('.question').innerHTML = randQ
 }
-
-
-
-
-
 random()
 /*-----------------------------------------------*/
 function answers(){
@@ -100,18 +98,7 @@ function answers(){
     let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
 }
 answers()
-//INSERIMENTO DELLE RISPOSTE NEI BOTTONI
-    function answers(){
-        let rAns = indiceCasuale.rightAnswer
-        let rAnsPick = document.querySelector('.rAnsBtn').innerHTML = rAns
-        let wAns0 = indiceCasuale.wrongAnswers[0]
-        let wAnsPick1 = document.querySelector('#wa0').innerHTML = wAns0
-        let wAns1 = indiceCasuale.wrongAnswers[1]
-        let wAnsPick2 = document.querySelector('#wa1').innerHTML = wAns1
-        let wAns2 = indiceCasuale.wrongAnswers[2]
-        let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
-    }
-    answers()
+
 /*-----------------------------------------------*/
 function validate(){
         let nextQuestion = document.getElementById("nuova-domanda")
