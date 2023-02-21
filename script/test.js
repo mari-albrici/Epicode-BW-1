@@ -50,21 +50,22 @@ class QuestionMarkI{
     pickQuestion(){
 
     }
-
-    validate(){
-
-    }
-
+    
 }
 function random(){
-let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
-console.log(indiceCasuale)
-let randQ = indiceCasuale.question
-console.log(randQ)
-let qPick = document.querySelector('h1').innerHTML = randQ
+    let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
+    console.log(indiceCasuale)
+    let randQ = indiceCasuale.question
+    console.log(randQ)
+    let qPick = document.querySelector('h1').innerHTML = randQ
 }
 random()
 
+function validate(){
+        let nextQuestion = document.getElementById("nuova-domanda")
+        nextQuestion.addEventListener("click",random)
+    }
+validate()
 
        // let domandaCasuale = questions.forEach(i => i.question = Math.floor(Math.random(i.question)))
         
