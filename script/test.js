@@ -64,12 +64,42 @@ let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
 
 function createHTML(){
     //box domanda
-    let areaTest = document.querySelector('.exambox');
+    let exambox = document.querySelector('.exambox');
     let questionBox = document.createElement('div');
     questionBox.classList.add('question');
-    areaTest.append(questionBox)
+    exambox.append(questionBox);
+
+    // ansbox
+    let ansbox = document.createElement('div');
+    ansbox.classList.add('ansbox');
+    exambox.append(ansbox);
+
+    //first and second row
+    let firstrow = document.createElement('div');
+    firstrow.classList.add('firstrow');
+    ansbox.append(firstrow);
+
+    let secondrow = document.createElement('div');
+    secondrow.classList.add('secondrow');
+    ansbox.append(secondrow);
+
     //box risposta giusta
-    
+    let rAnswerBox = document.createElement('button');
+    rAnswerBox.classList.add('rAnsBtn');
+    firstrow.append(rAnswerBox);
+
+    //box risposte sbagliate
+    let wAnswerBox0 = document.createElement('button');
+    wAnswerBox0.classList.add('wa0');
+    firstrow.append(wAnswerBox0);
+
+    let wAnswerBox1 = document.createElement('button');
+    wAnswerBox1.classList.add('wa1');
+    secondrow.append(wAnswerBox1);
+
+    let wAnswerBox2 = document.createElement('button');
+    wAnswerBox2.classList.add('wa2');
+    secondrow.append(wAnswerBox2);
 }
 createHTML()
 
@@ -77,6 +107,7 @@ createHTML()
 
 
 /*-----------------------------------------------*/
+//RANDOMIZZAZIONE DOMANDE
     function random(){
     let randQ = indiceCasuale.question
     let qPick = document.querySelector('.question').innerHTML = randQ
@@ -87,19 +118,21 @@ createHTML()
 }
 random()
 /*-----------------------------------------------*/
+//INSERIMENTO RISPOSTE
 function answers(){
     let rAns = indiceCasuale.rightAnswer
     let rAnsPick = document.querySelector('.rAnsBtn').innerHTML = rAns
     let wAns0 = indiceCasuale.wrongAnswers[0]
-    let wAnsPick1 = document.querySelector('#wa0').innerHTML = wAns0
+    let wAnsPick1 = document.querySelector('.wa0').innerHTML = wAns0
     let wAns1 = indiceCasuale.wrongAnswers[1]
-    let wAnsPick2 = document.querySelector('#wa1').innerHTML = wAns1
+    let wAnsPick2 = document.querySelector('.wa1').innerHTML = wAns1
     let wAns2 = indiceCasuale.wrongAnswers[2]
-    let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
+    let wAnsPick3 = document.querySelector('.wa2').innerHTML = wAns2
 }
 answers()
 
 /*-----------------------------------------------*/
+//TASTO VALIDAZIONE
 function validate(){
         let nextQuestion = document.getElementById("nuova-domanda")
         nextQuestion.addEventListener("click",random)

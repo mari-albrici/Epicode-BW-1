@@ -138,7 +138,19 @@ h1 p {
     border-radius: 30px;
 }
 
-.wAnsBtn {
+.wa0 {
+    width: 380px;
+    margin: 0.2rem;
+    max-width: 400px;
+    border-radius: 30px;
+}
+.wa1 {
+    width: 380px;
+    margin: 0.2rem;
+    max-width: 400px;
+    border-radius: 30px;
+}
+.wa2 {
     width: 380px;
     margin: 0.2rem;
     max-width: 400px;
