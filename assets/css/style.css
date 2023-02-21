@@ -551,18 +551,11 @@ svg {
   }
 
   circle {
-    stroke: #d20094;
+    stroke: #00ffff;
     stroke-width: 65px;
     fill: transparent;
   }
   
-  /*input {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 80px;
-  }
-  */
 
 /*FEEDBACK*/
 .containar_principale {
