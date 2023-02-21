@@ -66,25 +66,25 @@ let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
     numeroDomande++
     let domandeFatte = document.querySelector(".questionsDone")
     domandeFatte.textContent = numeroDomande
-    
 }
+
 
 
 
 
 random()
 /*-----------------------------------------------*/
-    function answers(){
-        let rAns = indiceCasuale.rightAnswer
-        let rAnsPick = document.querySelector('.rAnsBtn').innerHTML = rAns
-        let wAns0 = indiceCasuale.wrongAnswers[0]
-        let wAnsPick1 = document.querySelector('#wa0').innerHTML = wAns0
-        let wAns1 = indiceCasuale.wrongAnswers[1]
-        let wAnsPick2 = document.querySelector('#wa1').innerHTML = wAns1
-        let wAns2 = indiceCasuale.wrongAnswers[2]
-        let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
-    }
-    answers()
+function answers(){
+    let rAns = indiceCasuale.rightAnswer
+    let rAnsPick = document.querySelector('.rAnsBtn').innerHTML = rAns
+    let wAns0 = indiceCasuale.wrongAnswers[0]
+    let wAnsPick1 = document.querySelector('#wa0').innerHTML = wAns0
+    let wAns1 = indiceCasuale.wrongAnswers[1]
+    let wAnsPick2 = document.querySelector('#wa1').innerHTML = wAns1
+    let wAns2 = indiceCasuale.wrongAnswers[2]
+    let wAnsPick3 = document.querySelector('#wa2').innerHTML = wAns2
+}
+answers()
 /*-----------------------------------------------*/
 function validate(){
         let nextQuestion = document.getElementById("nuova-domanda")
@@ -92,8 +92,12 @@ function validate(){
     }
 validate()
 
-function timer(){
+//funzione per il timer figurativa perchè non è effettivamente collegata al timer 
+
+setTimeout(function(){
+    window.location.reload()
+},40000)
     
-}
+
 
 //counter domande
