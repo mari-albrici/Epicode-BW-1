@@ -111,10 +111,6 @@ createHTML()
     function random(){
     let randQ = indiceCasuale.question
     let qPick = document.querySelector('.question').innerHTML = randQ
-    //COUNTER DOMANDE CHE BISOGNA AGGANGIARE QUI X FORZA
-    numeroDomande++
-    let domandeFatte = document.querySelector(".questionsDone")
-    domandeFatte.textContent = numeroDomande
 }
 random()
 /*-----------------------------------------------*/
@@ -134,9 +130,23 @@ answers()
 /*-----------------------------------------------*/
 //TASTO VALIDAZIONE
 function validate(){
-        let nextQuestion = document.getElementById("nuova-domanda")
-        nextQuestion.addEventListener("click",random)
-    }
+    let nextQuestion = document.getElementById("nuova-domanda")
+    nextQuestion.addEventListener("click",function(){
+        let exambox = document.querySelector(".exambox")
+        exambox.innerHTML = "" 
+        createHTML()
+        indiceCasuale= questions[Math.floor(Math.random()* questions.length)]
+        random()
+        answers()
+        
+        //COUNTER DOMANDE CHE BISOGNA AGGANGIARE QUI X FORZA
+        numeroDomande++
+        let domandeFatte = document.querySelector(".questionsDone")
+        domandeFatte.textContent = numeroDomande
+    })
+    
+    
+}
 validate()
 
 //funzione per il timer figurativa perchè non è effettivamente collegata al timer 
@@ -144,7 +154,7 @@ validate()
 setTimeout(function(){
     window.location.reload()
 },40000)
-    
+
 
 
 //counter domande
