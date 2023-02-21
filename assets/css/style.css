@@ -184,9 +184,6 @@ h1 p {
 .counter {
     text-align: center;
     margin-top: 3rem;
-}
-
-.counter {
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -387,6 +384,8 @@ h1 p {
 svg {
     grid-column: 1;
     grid-row: 1;
+    max-width: fit-content;
+    max-height: fit-content;
 }
 
 [r] {

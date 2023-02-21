@@ -34,7 +34,6 @@ let questions = [{
     "Jelly Bean",
     "Marshmallow"]
 }]
-console.log(questions[3])
 
 
 
@@ -61,31 +60,39 @@ let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
 
 /*-----------------------------------------------*/
 //CREAZIONE HTML
+function timer(){
+    page = document.querySelector('#pagina')
+    let timerDiv = document.createElement('div');
+    timerDiv.classList.add('countdown');
+    let svg = document.createElement('svg');
+    let circle1 = document.createElement('circle');
+    let circle2 = document.createElement('circle');
+    svg.setAttribute('viewBox','-50 -50 100 100');
+    svg.setAttribute('stroke-width',10);
+    circle1.setAttribute('r',45);
+    circle2.setAttribute('r',45);
+    circle2.setAttribute('stroke-dasharray',282.7433388230814)
+    circle2.setAttribute('stroke-dashoffset',282.7433388230814)
+    svg.append(circle1);
+    svg.append(circle2);
+    timerDiv.append(svg);
+    page.append(timerDiv);
+    
+}
+timer()
+
 
 function createHTML(){
     //timer
-    // let page = document.querySelector('#pagina')
-    // let timerDiv = document.createElement('div');
-    // timerDiv.classList.add('countdown');
-    // let svg = document.createElement('svg');
-    // let circle1 = document.createElement('circle');
-    // let circle2 = document.createElement('circle');
-    // svg.setAttribute('viewBox','-50 -50 100 100');
-    // svg.setAttribute('stroke-width',10);
-    // circle1.setAttribute('r',45);
-    // circle2.setAttribute('r',45);
-    // circle2.setAttribute('stroke-dasharray',282.7433388230814)
-    // circle2.setAttribute('stroke-dashoffset',282.7433388230814)
-    // svg.append(circle1);
-    // svg.append(circle2);
-    // timerDiv.append(svg);
-    // page.append(timerDiv);
+    
 
     //box domanda
+    let page = document.querySelector('#pagina')
     let exambox = document.querySelector('.exambox');
     let questionBox = document.createElement('div');
     questionBox.classList.add('question');
     exambox.append(questionBox);
+    page.append(exambox)
 
     // ansbox
     let ansbox = document.createElement('div');
@@ -118,6 +125,7 @@ function createHTML(){
     let wAnswerBox2 = document.createElement('button');
     wAnswerBox2.classList.add('wa2');
     secondrow.append(wAnswerBox2);
+
 }
 createHTML()
 
@@ -179,23 +187,8 @@ function validate(){
             window.location.reload()
         },40000)
         //funzione per il timer figurativa perchè non è effettivamente collegata al timer 
+        
     })
-    let page = document.querySelector('#pagina')
-    let timerDiv = document.createElement('div');
-    timerDiv.classList.add('countdown');
-    let svg = document.createElement('svg');
-    let circle1 = document.createElement('circle');
-    let circle2 = document.createElement('circle');
-    svg.setAttribute('viewBox','-50 -50 100 100');
-    svg.setAttribute('stroke-width',10);
-    circle1.setAttribute('r',45);
-    circle2.setAttribute('r',45);
-    circle2.setAttribute('stroke-dasharray',282.7433388230814)
-    circle2.setAttribute('stroke-dashoffset',282.7433388230814)
-    svg.append(circle1);
-    svg.append(circle2);
-    timerDiv.append(svg);
-    page.append(timerDiv);
     
 }
 validate()
