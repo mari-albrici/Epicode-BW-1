@@ -556,6 +556,12 @@ svg {
     padding-top: 15px;
 }
 
+svg {
+    width: 650px;
+    height: 650px;
+}
+
+
 .progress-ring__circle {
     transition: 0.35s stroke-dashoffset;
     transform: rotate(-90deg);
