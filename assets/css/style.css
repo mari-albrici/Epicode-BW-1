@@ -523,25 +523,15 @@ svg {
     align-items: center;
 }
 
-#congrats {
-    font-weight: 600;
-    font-size: 1.5rem;
-    font-family: 'Outfit', sans-serif;
-}
 
-#passed {
-    font-weight: 600;
-    font-size: 1.5rem;
-    font-family: 'Outfit', sans-serif;
-    color: #00ffff;
-    padding-bottom: 20px;
-}
-
-.message {
+#message {
     font-weight: 400;
     font-size: 1.2rem;
     font-family: 'Outfit', sans-serif;
     line-height: 1.5rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
 }
 
 .progress-ring__circle {
