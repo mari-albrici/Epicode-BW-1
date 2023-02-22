@@ -391,13 +391,14 @@ function resultsPage() {
   wrapper.appendChild(wrong);
   
     //button  
-    let footer = document.querySelector('footer');
+    let page = document.querySelector('#pagina');
   
     let checkAnswer = document.createElement('button');
     checkAnswer.setAttribute('id','checkAnswer');
   checkAnswer.textContent = 'Check Answers';
 
-footer.appendChild(checkAnswer);
+page.appendChild(main);
+page.appendChild(checkAnswer);
 
 }
 resultsPage()
