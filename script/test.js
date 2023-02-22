@@ -35,24 +35,7 @@ let questions = [{
     "Marshmallow"]
 }]
 
-
-
-
-class QuestionMarkI{
-    
-    
-    
-    
-    pickQuestion(){
-        
-    }
-    
-}
-
-
 let numeroDomande = 0 // VARIABILE GLOBALE 
- 
-
 
 //PICK RANDOM DELLE DOMANDE, FUNZIONA!
 let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
