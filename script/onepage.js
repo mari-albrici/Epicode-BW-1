@@ -45,11 +45,13 @@ function indexPage(){
         welcomeCreate();
         main.setAttribute('id','ic');
       });
-    
 }
 indexPage()
 
-
+// btn.addEventListener('click', function(){
+//   welcomeCreate();
+//   main.setAttribute('id','ic');
+// });
 
 
 
@@ -117,6 +119,10 @@ function welcomeCreate(){
     // input.setAttribute(' ','required');
     btn.innerHTML = 'START TEST';
     btn.classList.add('btnToTest');
+    btn.addEventListener('click', function(){
+      createHTML();
+      main2.setAttribute('id','ic');
+    });
     span.innerHTML = 'I promise to answer myself without help from anyone';
     label.appendChild(input);
     label.appendChild(span);
@@ -197,13 +203,13 @@ function createHTML(){
     
 
     //box domanda
-    let page = document.querySelector('#pagina')
+    let main3 = document.querySelector('#pagina_3')
     let exambox = document.createElement('div');
     exambox.classList.add('exambox');
     let questionBox = document.createElement('div');
     questionBox.classList.add('question');
     exambox.appendChild(questionBox);
-    page.appendChild(exambox)
+    main3.appendChild(exambox)
 
     // ansbox
     let ansbox = document.createElement('div');
@@ -236,13 +242,45 @@ function createHTML(){
     let wAnswerBox2 = document.createElement('button');
     wAnswerBox2.classList.add('wa2');
     secondrow.append(wAnswerBox2);
+    
+    //bottone validate
+    let nextQuestion = document.createElement('button');
+        nextQuestion.setAttribute('id','nuova-domanda');
+        nextQuestion.setAttribute('type','button');
+        nextQuestion.innerHTML = 'Validate/Next question';
+        main3.appendChild(nextQuestion);
+        nextQuestion.addEventListener("click", function (){
+          validate()
+        })
 
-}
-
-timer()
 random()
 answers()
 validate()
+}
+
+
+timer()
+function validate(){
+                  let exambox = document.querySelector(".exambox")
+                  exambox.innerHTML = "" 
+                  if (numeroDomande < questions.length){
+                      createHTML()
+                      random()
+                      answers()
+                      numeroDomande++
+                      }else{
+                      //INSERIRE QUI FUNZIONE PER SEZIONE 4
+                      }
+                    let domandeFatte = document.querySelector(".questionsDone")
+                    domandeFatte.textContent = numeroDomande
+                    setTimeout(function(){
+                    window.location.reload()
+                    },40000)
+                    clearTimeout()
+                    }
+
+
+
 /*-----------------------------------------------*/
 //RANDOMIZZAZIONE DOMANDE
     function random(){
