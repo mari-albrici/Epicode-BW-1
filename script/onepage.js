@@ -1,9 +1,8 @@
 //index
 
 function indexPage(){
-  let paginaUno = document.getElementById("pagina_1");
-
-    let main = document.querySelector('main');
+    let paginaUno = document.getElementById("pagina");
+    let main = document.querySelector('#page-1');
     let containar = document.createElement('div');
     let title= document.createElement('h1');
     let par = document.createElement('p');
@@ -39,14 +38,17 @@ function indexPage(){
     divbtn.classList.add('containar_button');
     btn.setAttribute('onclick', '#')
     btn.setAttribute('type', 'button');
-    btn.addEventListener('click', () => welcomeCreate())
-    btn.addEventListener('click', () => main.remove())
     btn.textContent = 'PROCEED';
     divbtn.appendChild(btn);
     main.appendChild(divbtn);
+    btn.addEventListener('click', function(){
+        welcomeCreate();
+        main.setAttribute('id','ic');
+      });
     
 }
 indexPage()
+
 
 
 
@@ -76,7 +78,7 @@ function stellanator(n){
 }
 //--------------------------------------------------------------SEZIONE 2---
 function welcomeCreate(){
-    main = document.querySelector('main');
+    let main2 = document.querySelector('#page-2');
     let h1 = document.createElement('h1');
     let h2 = document.createElement('h2');
     let pwelcome = document.createElement('p');
@@ -104,10 +106,10 @@ function welcomeCreate(){
     ulWelcome.appendChild(liWelcome1);
     ulWelcome.appendChild(liWelcome2);
     ulWelcome.appendChild(liWelcome3);
-    main.appendChild(h1);
-    main.appendChild(h2);
-    main.appendChild(pwelcome);
-    main.appendChild(ulWelcome);
+    main2.appendChild(h1);
+    main2.appendChild(h2);
+    main2.appendChild(pwelcome);
+    main2.appendChild(ulWelcome);
     divWelcomeFooter.setAttribute('id','welcome-footer');
     label.setAttribute('for', 'checkbox');
     input.setAttribute('type', 'checkbox');
@@ -120,8 +122,9 @@ function welcomeCreate(){
     label.appendChild(span);
     divWelcomeFooter.appendChild(label);
     divWelcomeFooter.appendChild(btn);
-    main.appendChild(divWelcomeFooter);
+    main2.appendChild(divWelcomeFooter);
 }
+
 //--------------------------------------------------------------SEZIONE 3---
 //costruttore domande (Michele suggerisce classe)
 let questions = [{
@@ -186,7 +189,7 @@ function timer(){
     page.append(timerDiv);
     
 }
-timer()
+
 
 
 function createHTML(){
@@ -236,17 +239,17 @@ function createHTML(){
 
 }
 
-
-
-
-
+timer()
+random()
+answers()
+validate()
 /*-----------------------------------------------*/
 //RANDOMIZZAZIONE DOMANDE
     function random(){
     let randQ = indiceCasuale.question
     let qPick = document.querySelector('.question').innerHTML = randQ
 }
-random()
+
 /*-----------------------------------------------*/
 //INSERIMENTO RISPOSTE
 function answers(){
@@ -259,7 +262,7 @@ function answers(){
     let wAns2 = indiceCasuale.wrongAnswers[2]
     let wAnsPick3 = document.querySelector('.wa2').innerHTML = wAns2
 }
-answers()
+
 
 /*-----------------------------------------------*/
 //TASTO VALIDAZIONE
@@ -302,7 +305,7 @@ function validate(){
     })
     
 }
-validate()
+
 //--------------------------------------------------SEZIONE 4---
 function resultsPage() {
 
