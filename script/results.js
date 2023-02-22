@@ -1,7 +1,9 @@
-function createHTML() {
+class CreateResultsPage {
+constructor() {
 
     let page = document.querySelector('#pagina')
     let main = document.querySelector('#main');
+    page.appendChild(main);
 
     //titolo
     let titolone = document.createElement('div');
@@ -37,13 +39,11 @@ function createHTML() {
     //ring section  
     let container = document.createElement('div');
     container.classList.add('container');
-
     let svg = document.createElementNS('svg')
     svg.classList.add('progress-ring');
     let circle = document.createElementNS('circle');
     circle.classList.add('progress-ring__circle');
     svg.appendChild(circle);
-
     let message = document.createElement('div');
     message.classList.add('message');
     let topMessage = document.createElement('h3');
@@ -53,7 +53,6 @@ function createHTML() {
     let underMessage = document.createElement('p');
     underMessage.classList.add('underMessage');
     message.appendChild(topMessage, middleMessage, underMessage);
-
     container.appendChild(svg, message);
 
     //wrong section
@@ -75,12 +74,12 @@ function createHTML() {
     let button = document.createElement('button');
     checkAnswer.appendChild(button);
 
-    main.appendChild(titolone, middleSection, correct, wrong, container, checkAnswer);
+    wrapper.appendChild(correct, wrong, container);
+    main.appendChild(titolone, middleSection, wrapper, checkAnswer);
+}
 }
 
-createHTML()
-
-
+let resultsPage = new CreateResultsPage();
 
 
 
