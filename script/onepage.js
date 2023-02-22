@@ -1,6 +1,8 @@
 //index
 
 function indexPage(){
+  let paginaUno = document.getElementById("pagina_1");
+
     let main = document.querySelector('main');
     let containar = document.createElement('div');
     let title= document.createElement('h1');
@@ -36,18 +38,18 @@ function indexPage(){
     let btn = document.createElement('button');
     divbtn.classList.add('containar_button');
     btn.setAttribute('onclick', '#')
-    btn.addEventListener('click',() => welcomeCreate());
-    btn.addEventListener('click',  function (){let pagina = document.getElementById('pagina')
-    pagina.setAttribute('display', 'none') });
-
-    //////////////////////INSERIRE QUI FUNZIONE PER ANDARE A SEZIONE 2!
     btn.setAttribute('type', 'button');
+    btn.addEventListener('click', () => welcomeCreate())
+    btn.addEventListener('click', () => main.remove())
     btn.textContent = 'PROCEED';
     divbtn.appendChild(btn);
     main.appendChild(divbtn);
     
 }
 indexPage()
+
+
+
 
 //creatore di stelle
 function stellanator(n){
@@ -231,7 +233,7 @@ function createHTML(){
     secondrow.append(wAnswerBox2);
 
 }
-createHTML()
+
 
 
 
@@ -405,4 +407,3 @@ page.appendChild(main);
 page.appendChild(checkAnswer);
 
 }
-resultsPage()
