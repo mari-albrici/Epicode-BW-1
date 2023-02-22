@@ -1,4 +1,8 @@
 /* GENERALE */
+#ic{
+    display: none;
+}
+
 body {
     background-image: url(../img/bg.jpg);
     background-repeat: no-repeat;
