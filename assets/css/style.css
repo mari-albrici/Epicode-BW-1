@@ -13,7 +13,7 @@ body {
     font-size: 16px;
 }
 
-#pagina {
+.pagine {
     padding-left: 100px;
     padding-top: 80px;
     padding-right: 100px;
@@ -435,6 +435,7 @@ svg {
 }
 
 /*RESULT*/
+
 
 #title {
     font-family: 'Outfit', sans-serif;
