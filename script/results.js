@@ -1,8 +1,6 @@
-class CreateResultsPage {
-constructor() {
-
-    let page = document.querySelector('#pagina')
-    let main = document.querySelector('#main');
+function resultsPage() {
+    let page = document.querySelector('pagina')
+    let main = document.querySelector('main');
     page.appendChild(main);
 
     //titolo
@@ -77,9 +75,9 @@ constructor() {
     wrapper.appendChild(correct, wrong, container);
     main.appendChild(titolone, middleSection, wrapper, checkAnswer);
 }
-}
+resultsPage()
 
-let resultsPage = new CreateResultsPage();
+
 
 
 
