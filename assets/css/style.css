@@ -658,3 +658,10 @@ input {
     display: flex;
     justify-content: center;
 }
+.grandezza{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin: 0 0 0 0;
+    fill: #00ffff;
+}
