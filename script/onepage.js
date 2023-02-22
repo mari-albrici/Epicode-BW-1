@@ -35,7 +35,12 @@ function indexPage(){
     let divbtn = document.createElement('div');
     let btn = document.createElement('button');
     divbtn.classList.add('containar_button');
-    btn.setAttribute('onclick',"#");//////////////////////INSERIRE QUI FUNZIONE PER ANDARE A SEZIONE 2!
+    btn.setAttribute('onclick', '#')
+    btn.addEventListener('click',() => welcomeCreate());
+    btn.addEventListener('click',  function (){let pagina = document.getElementById('pagina')
+    pagina.setAttribute('display', 'none') });
+
+    //////////////////////INSERIRE QUI FUNZIONE PER ANDARE A SEZIONE 2!
     btn.setAttribute('type', 'button');
     btn.textContent = 'PROCEED';
     divbtn.appendChild(btn);
@@ -113,7 +118,6 @@ function welcomeCreate(){
     divWelcomeFooter.appendChild(btn);
     main.appendChild(divWelcomeFooter);
 }
-welcomeCreate();
 //--------------------------------------------------------------SEZIONE 3---
 //costruttore domande (Michele suggerisce classe)
 let questions = [{
