@@ -29,6 +29,24 @@ function stellacoloratorMarkII(){
     })
   })
 }
+
+let input = document.querySelector('input');
+let array1 = [];
+
+localStorage.getItem('items', JSON.stringify(array1));
+
+let data = JSON.parse(localStorage.getItem('items'));
+document.querySelector('input').addEventListener('keypress', function salvare(ex) {
+    if(ex.key === 'Enter'){
+
+        array1.push(input.value);
+        localStorage.setItem('items', JSON.stringify(array1));
+    }
+})
+
+                
+
+console.log(localStorage);
 //--------------------------------------------------------------SEZIONE 2---
 function welcomeCreate(){
     let main2 = document.querySelector('#page-2');
