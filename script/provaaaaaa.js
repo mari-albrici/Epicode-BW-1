@@ -189,14 +189,12 @@ if (correctAnswers < 101 && correctAnswers > 0) {
     setProgress(correctAnswers);
 }
 
-
-
 let topMessage = document.getElementById('topMessage');
 let middleMessage = document.getElementById('middleMessage');
 let underMessage = document.getElementById('underMessage');
 
 function message() {
-    if (correctAnswers >= 60) {
+    if (correctAnswers.lenght*10 >= 60) {
         topMessage.innerText = 'Congratulations!';
         middleMessage.innerText = 'You passed the exam.';
         underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
