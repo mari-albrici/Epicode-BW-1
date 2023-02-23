@@ -96,7 +96,7 @@ let wrongAnswersElement = document.getElementById("wrongQuestions") //lascia per
 
 
 let counter = 0
-//let correctAnswer = 0 //lascia perdere
+let correctAnswers = 0 //lascia perdere
 let wrongAnswers = 0//lascia perdere
 
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
@@ -180,6 +180,8 @@ function setProgress(percent) {
 
 let correctPercentage = document.getElementById("correctPercentage");
 correctPercentage.innerText = `${correctAnswers} %`;
+let wrongPercentage = document.getElementById("wrongPercentage");
+wrongPercentage.innerText = `${wrongAnswers} %`;
 
 setProgress(correctAnswers);
 
