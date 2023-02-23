@@ -439,12 +439,12 @@ svg {
     100% {
         stroke: #d21212;
     }
-}*/
+}
 
 /*RESULT*/
 
 #titolone {
-    line-height: 3rem;
+    line-height: 0.8rem;
     margin-bottom: 0;
 }
 

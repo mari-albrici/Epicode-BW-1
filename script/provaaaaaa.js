@@ -177,11 +177,11 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-let inputPercentuale = document.querySelector('#pecentuale');
-setProgress(inputPercentuale.value);
+let input = document.querySelector('.percentuale');
+setProgress(input.value);
 
-inputPercentuale.addEventListener('change', function (e) {
-    if (inputPercentuale.value < 101 && inputPercentuale.value > 0) {
+input.addEventListener('change', function (e) {
+    if (input.value < 101 && input.value > 0) {
         setProgress(input.value);
     }
 })
@@ -191,7 +191,7 @@ let topMessage = document.getElementById('topMessage');
 let middleMessage = document.getElementById('middleMessage');
 let underMessage = document.getElementById('underMessage');
 
-inputPercentuale.addEventListener('keydown', function (event) {
+input.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         let percentage = Number(inputPercentuale.value);
         function message() {
