@@ -155,7 +155,7 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-let inputPercentuale = document.querySelector('input');
+let inputPercentuale = document.querySelector('#pecentuale');
 setProgress(inputPercentuale.value);
 
 inputPercentuale.addEventListener('change', function (e) {
