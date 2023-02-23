@@ -8,7 +8,18 @@ function stellacoloratorMarkII(){
 })
 })
 }stellacoloratorMarkII()
-let questions = [{
+let questions = [
+{
+        question: "Qual è il tuo nome?",
+        rightAnswer: "Matteo",
+        wrongAnswers: ["Andrea", "Marianna", "Michele"]
+},
+{
+    question: "Quanto costa una pizza Hawaiian?",
+    rightAnswer: "50",
+    wrongAnswers: ["5", "25", "1"]
+},
+{
 question: "Qual'è la pizza preferita di Michele?",
 rightAnswer: "Diavola",
 wrongAnswers:["Margherita","Hawaiana", "Capricciosa"]
@@ -31,6 +42,11 @@ rightAnswer: "140",
 wrongAnswers:["120", "160", "100"]
 },
 {
+question: "Quante volte hai dovuto ricominciare questo progetto?",
+rightAnswer: "20",
+wrongAnswers:["10", "MAI", "1"]
+},
+{
 question: "Which programming language shares its name with an island in Indonesia?",
 rightAnswer: "Java",
 wrongAnswers:["Python", "C", "Jakarta"]
@@ -41,7 +57,13 @@ rightAnswer: "Nougat",
 wrongAnswers:["Ice Cream Sandwich",
 "Jelly Bean",
 "Marshmallow"]
-}]
+},
+{
+question: "Di che colore è il cielo?",
+rightAnswer: "Sicilia",
+wrongAnswers:["2", "Forchetta", "Pizzicotto"]
+},
+]
 
 // Nascondi tutti gli elementi tranne l'header
 document.getElementById("matteo").style.display = "none"
@@ -83,7 +105,7 @@ counter++
 counterElement.innerHTML = "Domanda :" + counter
 
 
-if (counter === 6){ //si va da marianna
+if (counter === 11){ //si va da marianna
 document.getElementById("matteo").style.display = "none"
 document.getElementById("andrea").style.display = "none"
 document.getElementById("emanuele").style.display = "none"
@@ -100,7 +122,7 @@ let randomQuestion = questions[Math.floor(Math.random() * questions.length)]
 
 // Aggiorna il testo della domanda
 questionElement.innerText = randomQuestion.question
-
+questions.splice(questions.findIndex(i => i.question === randomQuestion.question), 1);
 
 
 
@@ -155,30 +177,30 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-let input = document.querySelector('.percentuale');
-setProgress(input.value);
+let inputPercentuale = document.querySelector('#pecentuale');
+setProgress(inputPercentuale.value);
 
-let topMessage = document.querySelector('#topMessage');
-let middleMessage = document.querySelector('#middleMessage');
-let underMessage = document.querySelector('#underMessage');
-
-
-input.addEventListener('change', function (e) {
-    if (input.value < 101 && input.value > 0) {
+inputPercentuale.addEventListener('change', function (e) {
+    if (inputPercentuale.value < 101 && inputPercentuale.value > 0) {
         setProgress(input.value);
     }
 })
 
-inputPercentuale.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter') {
-        let percentage = Number(input.value);
+
+let topMessage = document.getElementById('topMessage');
+let middleMessage = document.getElementById('middleMessage');
+let underMessage = document.getElementById('underMessage');
+
+inputPercentuale.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        let percentage = Number(inputPercentuale.value);
         function message() {
             if (percentage >= 60) {
                 topMessage.innerText = 'Congratulations!';
                 middleMessage.innerText = 'You passed the exam.';
                 underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
             } else {
-                topMessage.innerText = 'We\'re sorry.';
+                topMessage.innerText = 'We\'re sorry';
                 middleMessage.innerText = 'You did not pass the exam.';
                 underMessage.innerText = 'Check your email (including the promotions/spam folder)';
             }
