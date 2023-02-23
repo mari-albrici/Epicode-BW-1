@@ -181,9 +181,9 @@ function setProgress(percent) {
 
 
 let correctPercentage = document.getElementById("correctPercentage");
-correctPercentage.innerText = `${correctAnswers} %`;
+correctPercentage.innerText = `${correctAnswers.length*10} %`;
 let wrongPercentage = document.getElementById("wrongPercentage");
-wrongPercentage.innerText = `${wrongAnswers} %`;
+wrongPercentage.innerText = `${wrongAnswers.length*10} %`;
 
 setProgress(correctAnswers);
 
