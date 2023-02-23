@@ -7,7 +7,7 @@ function stellacoloratorMarkII(){
     })
 })
 })
-}
+}stellacoloratorMarkII()
 let questions = [{
 question: "Qual'è la pizza preferita di Michele?",
 rightAnswer: "Diavola",
