@@ -32,6 +32,31 @@
         "wrongAnswers":["Ice Cream Sandwich",
         "Jelly Bean",
         "Marshmallow"]
+    },
+    {
+        "question": "Which one was the first serach engine?",
+        "rightAnswer": "Archie",
+        "wrongAnswers": ["Google", "Altavista", "Bing"]
+    },
+    {
+        "question": "A firewall is used for:",
+        "rightAnswer": "Security",
+        "wrongAnswers":["Data transmission", "Authentication", "Monitoring"]
+    },
+    {
+        "question": "Which of the following is not an operating system?",
+        "rightAnswer": "C",
+        "wrongAnswers":["DOS", "Linus","MacOs"]
+    },
+    {
+        "question": "Which of the following is not a database management software?",
+        "rightAnswer": "COBOL",
+        "wrongAnswers":["MySQL", "Sybase", "Oracle"]
+    },
+    {
+        "question": ".gif is an extension of:",
+        "rightAnswer": "image file",
+        "wrongAnswers":["audio file", "video file", "text file"]
     }
     
 ]
