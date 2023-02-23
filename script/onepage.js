@@ -203,7 +203,18 @@ function createHTML(){
         nextQuestion.addEventListener("click", function (){
           validate()
         })
-
+      //counter domande
+      let box = document.createElement('div');
+      box.classList.add('counter');
+      let span1 = document.createElement('span');
+      let span2 = document.createElement('span');
+      span1.classList.add('questionsDone')
+      span2.classList.add('questionsLeft')
+      span1.textContent = 'x/' ;
+      span2.textContent = questions.length;
+      box.appendChild(span1);
+      box.appendChild(span2);
+      main3.appendChild(box);
 random()
 answers()
 validate()
