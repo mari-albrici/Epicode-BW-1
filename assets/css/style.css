@@ -46,10 +46,6 @@ button:hover {
     filter: drop-shadow(5px 5px 50px #0ff);
 }
 
-/*INDEX*/
-
-
-
 /*WELCOME*/
 #matteo {
     text-align: left;
@@ -553,9 +549,9 @@ svg {
     font-size: 1.2rem;
     font-family: 'Outfit', sans-serif;
     line-height: 1.5rem;
-    position: fixed;
-    top: 45%;
-    left: 43%;
+    position: absolute;
+    top:200px;
+    left: 315px;
     text-align: center;
     height: 300px;
     width: 300px;
@@ -588,11 +584,9 @@ svg {
 }
 
 .progress-ring__circle {
-    text-align: center;
     transition: 0.35s stroke-dashoffset;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
-    fill: #00ffff;
 }
 
 circle {
@@ -601,12 +595,7 @@ circle {
     fill: transparent;
 }
 
-[r] {
-    fill: #d20094;
-    stroke: #00ffff;
-}
-
-input {
+.percentuale {
     height: 40px;
     font-family: 'Outfit', sans-serif;
     font-weight: 400;

@@ -155,30 +155,30 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-let inputPercentuale = document.querySelector('#pecentuale');
-setProgress(inputPercentuale.value);
+let input = document.querySelector('.percentuale');
+setProgress(input.value);
 
-inputPercentuale.addEventListener('change', function (e) {
-    if (inputPercentuale.value < 101 && inputPercentuale.value > 0) {
+let topMessage = document.querySelector('#topMessage');
+let middleMessage = document.querySelector('#middleMessage');
+let underMessage = document.querySelector('#underMessage');
+
+
+input.addEventListener('change', function (e) {
+    if (input.value < 101 && input.value > 0) {
         setProgress(input.value);
     }
 })
 
-
-let topMessage = document.getElementById('topMessage');
-let middleMessage = document.getElementById('middleMessage');
-let underMessage = document.getElementById('underMessage');
-
-inputPercentuale.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        let percentage = Number(inputPercentuale.value);
+inputPercentuale.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        let percentage = Number(input.value);
         function message() {
             if (percentage >= 60) {
                 topMessage.innerText = 'Congratulations!';
                 middleMessage.innerText = 'You passed the exam.';
                 underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
             } else {
-                topMessage.innerText = 'We\'re sorry';
+                topMessage.innerText = 'We\'re sorry.';
                 middleMessage.innerText = 'You did not pass the exam.';
                 underMessage.innerText = 'Check your email (including the promotions/spam folder)';
             }
