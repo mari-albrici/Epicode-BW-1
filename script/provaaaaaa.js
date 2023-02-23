@@ -96,8 +96,8 @@ let wrongAnswersElement = document.getElementById("wrongQuestions") //lascia per
 
 
 let counter = 0
-let correctAnswers = 0 //lascia perdere
-let wrongAnswers = 0//lascia perdere
+let correctAnswers = [] 
+let wrongAnswers = []
 
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
 document.getElementById("il-bottone-dei-bottoni").addEventListener("click", function () {
@@ -115,7 +115,6 @@ document.getElementById("il-bottone-dei-bottoni").addEventListener("click", func
         correctAnswersElement.innerText = correctAnswers //serve per far displayare le risposte corrette da marianna
         wrongAnswersElement.innerText = wrongAnswers //uguale che a sopra
 
-
     } else { //senno si randomizza domanda 
         // Scegli una domanda casuale dall'array
         let randomQuestion = questions[Math.floor(Math.random() * questions.length)]
@@ -124,18 +123,9 @@ document.getElementById("il-bottone-dei-bottoni").addEventListener("click", func
         questionElement.innerText = randomQuestion.question
         questions.splice(questions.findIndex(i => i.question === randomQuestion.question), 1);
 
-
-
-
-
-
         // Crea un array con tutte le risposte (giusta e sbagliate ps: si può fare solo in questo modo ) 
         let answers = [...randomQuestion.wrongAnswers, randomQuestion.rightAnswer]
-        //console.log(answers)
-
-
-
-
+        
         // QUESTO è per randomizzare le risposte trovato su internet quello che abbaimo fatto l'altro giorno non fuzniona piu e in più IN TEORIA dovrebbe salvare le risposte giuste con dataset ma non funge 
         answerButtons.forEach((button, index) => {
             button.innerText = answers[index]
