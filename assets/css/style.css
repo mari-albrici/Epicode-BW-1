@@ -226,7 +226,7 @@ h1 p {
     content: counter(s, decimal-leading-zero);
 }
 
-/keyframes numerici per timer a schermo/
+/*keyframes numerici per timer a schermo/
 @keyframes num {
     0% {
         counter-reset: s 40;
@@ -412,8 +412,8 @@ svg {
     animation: arc 40s linear infinite;
     animation-name: arc, col;
 }
-
-/keyframes per cambio colore del timer/
+*/
+/*keyframes per cambio colore del timer/
 @keyframes arc {
     0% {
         stroke-dashoffset: 0px;
@@ -440,9 +440,9 @@ svg {
     100% {
         stroke: #d21212;
     }
-}
+}*/
 
-/RESULT/
+/*RESULT*/
 
 #titolone {
     line-height: 0.8rem;
