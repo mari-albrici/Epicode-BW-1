@@ -159,7 +159,7 @@ let inputPercentuale = document.querySelector('#pecentuale');
 setProgress(inputPercentuale.value);
 
 inputPercentuale.addEventListener('change', function (e) {
-    if (inputPercentuale.value < 101 && input.value > 0) {
+    if (inputPercentuale.value < 101 && inputPercentuale.value > 0) {
         setProgress(input.value);
     }
 })
@@ -171,7 +171,7 @@ let underMessage = document.getElementById('underMessage');
 
 inputPercentuale.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-        let percentage = Number(input.value);
+        let percentage = Number(inputPercentuale.value);
         function message() {
             if (percentage >= 60) {
                 topMessage.innerText = 'Congratulations!';
