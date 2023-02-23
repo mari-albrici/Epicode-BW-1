@@ -1,16 +1,3 @@
-let input = document.querySelector('input');
-let array1 = [];
-
-localStorage.getItem('items', JSON.stringify(array1));
-
-let data = JSON.parse(localStorage.getItem('items'));
-let bottone = document.getElementById('btn-to-welcome')
-
-bottone.addEventListener('click', function salvare() {
-    array1.push(input.value);
-    localStorage.setItem('items', JSON.stringify(array1));    
-});
-//localStorage.clear();
 function stellacoloratorMarkII(){
     let stars = document.querySelectorAll('path');
     stars.forEach((star,index1) => {
@@ -19,10 +6,7 @@ function stellacoloratorMarkII(){
     index1>=index2 ? star.classList.add('active') : star.classList.remove('active');
     })
 })
-
 })
-
-console.log(localStorage);
 }stellacoloratorMarkII()
 let questions = [{
 question: "Qual'è la pizza preferita di Michele?",
@@ -90,7 +74,7 @@ let wrongAnswersElement = document.getElementById("wrongQuestions") //lascia per
 
 
 let counter = 0
-let correctAnswers = 0 //lascia perdere
+let correctAnswer = 0 //lascia perdere
 let wrongAnswers = 0//lascia perdere
 
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
@@ -134,9 +118,10 @@ let answers = [...randomQuestion.wrongAnswers, randomQuestion.rightAnswer]
 answerButtons.forEach((button, index) => {
     button.innerText = answers[index]
     button.dataset.correct = (answers[index] === randomQuestion.rightAnswer)
+  
 
     //QUESTO NON FUNZIONA
-    
+
     button.addEventListener("click", function() {
         if (button.dataset.correct === "true") { // ???????????????????????????????????
             // Incrementa il contatore per le risposte corrette
@@ -147,13 +132,13 @@ answerButtons.forEach((button, index) => {
             wrongAnswers++;
         }
     });
+
     
 });
 
 }
 
 });
-
 
 
 //CERCHIO PERCENTUALE RISPOSTE MARI - SE FUNZIONASSE...

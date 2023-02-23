@@ -46,11 +46,11 @@ button:hover {
     filter: drop-shadow(5px 5px 50px #0ff);
 }
 
-/*INDEX*/
+/INDEX/
 
 
 
-/*WELCOME*/
+/WELCOME/
 #matteo {
     text-align: left;
 }
@@ -124,7 +124,7 @@ li>span {
 }
 */
 
-/*TEST*/
+/TEST/
 
 .exambox {
     margin-top: 5rem;
@@ -204,7 +204,7 @@ h1 p {
     color: #d20094;
 }
 
-/*TIMER*/
+/TIMER/
 
 .countdown {
     display: grid;
@@ -226,7 +226,7 @@ h1 p {
     content: counter(s, decimal-leading-zero);
 }
 
-/*keyframes numerici per timer a schermo*/
+/keyframes numerici per timer a schermo/
 @keyframes num {
     0% {
         counter-reset: s 40;
@@ -413,7 +413,7 @@ svg {
     animation-name: arc, col;
 }
 
-/*keyframes per cambio colore del timer*/
+/keyframes per cambio colore del timer/
 @keyframes arc {
     0% {
         stroke-dashoffset: 0px;
@@ -442,7 +442,7 @@ svg {
     }
 }
 
-/*RESULT*/
+/RESULT/
 
 #titolone {
     line-height: 0.8rem;
@@ -609,7 +609,7 @@ input {
 }
 
 
-/*FEEDBACK*/
+/FEEDBACK/
 .containar_principale {
     padding: 10px;
     margin: 15px 0 15px 0;
