@@ -1,38 +1,9 @@
 //index
 
 function indexPage(){
-    let paginaUno = document.getElementById("pagina");
+
     let main = document.querySelector('#page-1');
-    let containar = document.createElement('div');
-    let title= document.createElement('h1');
-    let par = document.createElement('p');
-    containar.classList.add('containar');
-    title.setAttribute('id','titolo');
-    par.setAttribute('id','paragrafo');
-    title.textContent = 'Tell us how it\'s going';
-    par.innerText = 'From O to 10, how likely are you to recommend EPICODE to a friend or a colleague?';
-    containar.appendChild(title);
-    containar.appendChild(par);
-    main.appendChild(containar);
-    let pippostella = stellanator(10);
-    main.appendChild(pippostella);
-
-    let p  = document.createElement('p');
-    let pdiv = document.createElement('div');
-    p.classList.add('paragrafo_footer');
-    p.textContent = 'Leave us an open feedback about your experience so far';
-    pdiv.appendChild(p);
-    main.appendChild(pdiv);
-
-    let inputdiv = document.createElement('div');
-    let input = document.createElement('input');
-    input.classList.add('containar_input');
-    input.setAttribute('type', 'text');
-    input.setAttribute('class', 'input_footer');
-    input.setAttribute('placeholder', 'Write your comment here');
-    inputdiv.appendChild(input);
-    main.appendChild(inputdiv);
-
+    stellacoloratorMarkII()
     let divbtn = document.createElement('div');
     let btn = document.createElement('button');
     divbtn.classList.add('containar_button');
@@ -48,35 +19,15 @@ function indexPage(){
 }
 indexPage()
 
-// btn.addEventListener('click', function(){
-//   welcomeCreate();
-//   main.setAttribute('id','ic');
-// });
-
-//creatore di stelle
-function stellanator(n){
-  let main = document.querySelector('#page-1');
-    let containerStelle = document.createElement('div');
-    for(let i = 0; i < n; i++){
-    //let stellaclick = document.createElement('a');
-    // stellaclick.setAttribute('href', '#');
-    let stella = document.createElement('svg');
-    stella.setAttribute('width', '47');
-    stella.setAttribute('height', '46');
-    stella.setAttribute('viewBox', '0 0 47 46');
-    stella.setAttribute('fill', 'none');
-    stella.setAttribute('class', 'grandezza')
-    stella.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    let ele = document.createElement('path');
-    ele.setAttribute('d', "M22.2044 1.55551C22.6143 0.569963 24.0104 0.569964 24.4203 1.55552L29.9874 14.9402C30.1602 15.3557 30.5509 15.6396 30.9994 15.6756L45.4494 16.834C46.5134 16.9193 46.9448 18.2471 46.1341 18.9415L35.1248 28.3722C34.7831 28.6649 34.6338 29.1242 34.7382 29.5619L38.1018 43.6626C38.3494 44.7009 37.2199 45.5215 36.309 44.9651L23.9379 37.4089C23.5538 37.1743 23.0709 37.1743 22.6868 37.4089L10.3157 44.9651C9.40478 45.5215 8.27528 44.7009 8.52295 43.6626L11.8865 29.5619C11.9909 29.1242 11.8416 28.6649 11.4999 28.3722L0.490575 18.9415C-0.320069 18.2471 0.111362 16.9193 1.17535 16.834L15.6253 15.6756C16.0738 15.6396 16.4645 15.3557 16.6374 14.9402L22.2044 1.55551Z");
-    ele.setAttribute('fill', 'red');
-    ele.setAttribute('class', 'grandezza');
-    //stellaclick.appendChild(stella);
-    stella.appendChild(ele);
-    containerStelle.appendChild(stella);
-    main.appendChild(containerStelle);
-    }
-    return containerStelle;
+function stellacoloratorMarkII(){
+  let stars = document.querySelectorAll('path');
+  stars.forEach((star,index1) => {
+    star.addEventListener('click', ()=> {
+      stars.forEach((star,index2) => {
+        index1>=index2 ? star.classList.add('active') : star.classList.remove('active');
+      })
+    })
+  })
 }
 //--------------------------------------------------------------SEZIONE 2---
 function welcomeCreate(){

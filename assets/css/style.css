@@ -623,6 +623,11 @@ input {
 .stella {
     width: 2.5em;
     margin: 0 5px 0 5px;
+    fill: black;
+}
+
+.active{
+    fill:#00ffff
 }
 
 .paragrafo_footer {
