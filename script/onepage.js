@@ -43,7 +43,7 @@ function indexPage(){
     main.appendChild(divbtn);
     btn.addEventListener('click', function(){
         welcomeCreate();
-        main.setAttribute('id','ic');
+        //main.setAttribute('id','ic');
       });
 }
 indexPage()
@@ -52,8 +52,6 @@ indexPage()
 //   welcomeCreate();
 //   main.setAttribute('id','ic');
 // });
-
-
 
 //creatore di stelle
 function stellanator(n){
@@ -260,7 +258,6 @@ answers()
 validate()
 }
 
-
 timer()
 function validate(){
                   let exambox = document.querySelector(".exambox")
@@ -349,7 +346,7 @@ function validate(){
 //--------------------------------------------------SEZIONE 4---
 function resultsPage() {
 
-    let main = document.querySelector('main');
+    let main4 = document.querySelector('main');
   
     //titolo
     let titolone = document.createElement('div'); 
@@ -363,7 +360,7 @@ function resultsPage() {
    
     titolone.appendChild(title);
     titolone.appendChild(underTitle);
-    main.appendChild(titolone);
+    main4.appendChild(titolone);
     
   
     //middle section
@@ -373,7 +370,7 @@ function resultsPage() {
       wrapper.setAttribute('id','wrapper');
     
     middleSection.appendChild(wrapper);
-    main.appendChild(middleSection);
+    main4.appendChild(middleSection);
   
     //correct section
     let correct = document.createElement('div');
@@ -446,9 +443,34 @@ function resultsPage() {
   
     let checkAnswer = document.createElement('button');
     checkAnswer.setAttribute('id','checkAnswer');
-  checkAnswer.textContent = 'Check Answers';
+    checkAnswer.textContent = 'Check Answers';
+    checkAnswer.addEventListener("click",function(){
+      checkAnswerPopup()
+    })
 
-page.appendChild(main);
+page.appendChild(main4);
 page.appendChild(checkAnswer);
+
+}
+
+function checkAnswerPopup() {
+  //main element
+  let popup = document.createElement('div');
+  popup.setAttribute('id','popup');
+
+  //titolo
+  let popupTitle = document.createElement('h2');
+  popupTitle.setAttribute('id','popupTitle');
+  popupTitle.textContent = 'Check your answers';
+
+  //box singola domanda e risposte + risposta giusta
+  let fullQuestions = document.createElement('div');
+  fullQuestions.setAttribute('id','fullQuestions');
+  let qs = document.createElement('h4');
+  qs.setAttribute('id','qs');
+  let ans = document.createElement('p');
+  ans.setAttribute('id','ans');
+  let correctAnswer = document.createElement('p');
+  correctAnswer.setAttribute('id','correctAnswer');
 
 }
