@@ -72,6 +72,11 @@ function welcomeCreate(){
     btn.classList.add('btnToTest');
     btn.addEventListener('click', function(){
       createHTML();
+      button();
+      counter();
+      answers();
+      random();
+      timer();
       main2.setAttribute('id','ic');
     });
     span.innerHTML = 'I promise to answer myself without help from anyone';
@@ -123,12 +128,11 @@ let numeroDomande = 0 // VARIABILE GLOBALE
 
 //PICK RANDOM DELLE DOMANDE, FUNZIONA!
 let indiceCasuale = questions[Math.floor(Math.random()*questions.length)]
-    console.log(indiceCasuale)
 
 /*-----------------------------------------------*/
 //CREAZIONE HTML
 function timer(){
-    page = document.querySelector('#pagina')
+    page = document.querySelector('#pagina_3')
     let timerDiv = document.createElement('div');
     timerDiv.classList.add('countdown');
     let svg = document.createElement('svg');
@@ -191,8 +195,27 @@ function createHTML(){
     let wAnswerBox2 = document.createElement('button');
     wAnswerBox2.classList.add('wa2');
     secondrow.append(wAnswerBox2);
-    
-    //bottone validate
+
+}
+
+function counter(){
+  let main3 = document.querySelector('#pagina_3');
+  let box = document.createElement('div');
+      box.classList.add('counter');
+      let span1 = document.createElement('span');
+      let span2 = document.createElement('span');
+      span1.classList.add('questionsDone')
+      span2.classList.add('questionsLeft')
+      span1.textContent = domandefatte;
+      span2.textContent = questions.length;
+      box.appendChild(span1);
+      box.appendChild(span2);
+      main3.appendChild(box);
+}
+
+//bottone validate
+function button(){
+  let main3 = document.querySelector('#pagina_3');
     let nextQuestion = document.createElement('button');
         nextQuestion.setAttribute('id','nuova-domanda');
         nextQuestion.setAttribute('type','button');
@@ -201,43 +224,30 @@ function createHTML(){
         nextQuestion.addEventListener("click", function (){
           validate()
         })
-      //counter domande
-      let box = document.createElement('div');
-      box.classList.add('counter');
-      let span1 = document.createElement('span');
-      let span2 = document.createElement('span');
-      span1.classList.add('questionsDone')
-      span2.classList.add('questionsLeft')
-      span1.textContent = 'x/' ;
-      span2.textContent = questions.length;
-      box.appendChild(span1);
-      box.appendChild(span2);
-      main3.appendChild(box);
-random()
-answers()
-validate()
+      }
+
+
+let domandefatte = 0
+
+function validate(){
+    
+    nuovadomanda()
 }
 
-timer()
-function validate(){
-                  let exambox = document.querySelector(".exambox")
-                  exambox.innerHTML = "" 
-                  if (numeroDomande < questions.length){
-                      createHTML()
-                      random()
-                      answers()
-                      numeroDomande++
-                      }else{
-                      //INSERIRE QUI FUNZIONE PER SEZIONE 4
-                      }
-                    let domandeFatte = document.querySelector(".questionsDone")
-                    domandeFatte.textContent = numeroDomande
-                    setTimeout(function(){
-                    window.location.reload()
-                    },40000)
-                    clearTimeout()
-                    }
 
+function nuovadomanda(){
+  
+    let exambox = document.querySelector(".exambox");
+    domandefatte++
+    if(domandefatte < questions.length){
+      exambox.innerHTML = ''
+      random();
+      answers();
+    }else{
+      resultsPage()
+      main3.setAttribute('id','ic');
+    }
+    }
 
 
 /*-----------------------------------------------*/
@@ -263,46 +273,45 @@ function answers(){
 
 /*-----------------------------------------------*/
 //TASTO VALIDAZIONE
-function validate(){
-    let nextQuestion = document.createElement('button');
-    nextQuestion.setAttribute('id','nuova-domanda');
-    nextQuestion.setAttribute('type','button');
-    nextQuestion.innerHTML = 'Validate/Next question';
-    nextQuestion.addEventListener("click",function(){
-        let exambox = document.querySelector(".exambox")
-        exambox.innerHTML = "" 
+// function validate(){
+//     let nextQuestion = document.createElement('button');
+//     nextQuestion.setAttribute('id','nuova-domanda');
+//     nextQuestion.setAttribute('type','button');
+//     nextQuestion.innerHTML = 'Validate/Next question';
+//     nextQuestion.addEventListener("click",function(){
+//         let exambox = document.querySelector(".exambox")
+//         exambox.innerHTML = "" 
 
 
-        //resetta il time ogni volta che clicckiamo "nuova-domanda"
-        clearTimeout()
+//         //resetta il time ogni volta che clicckiamo "nuova-domanda"
+//         clearTimeout()
 
-        //creiamo nuove domande e risposte 
-        indiceCasuale= questions[Math.floor(Math.random()* questions.length)]
-        //fin quando è < 6 il contatore
-        if (numeroDomande < questions.length){
-            createHTML()
-            random()
-            answers()
-            numeroDomande++
-            //quando il contatore è a 6 va da marianna 
-        }else{
-            resultsPage();
-            main3.setAttribute('id', 'ic')//INSERIRE QUI FUNZIONE PER SEZIONE 4
-        }
+//         //creiamo nuove domande e risposte 
+//         indiceCasuale= questions[Math.floor(Math.random()* questions.length)]
+//         //fin quando è < 6 il contatore
+//         if (numeroDomande < questions.length){
+//             createHTML()
+//             random()
+//             answers()
+//             numeroDomande++
+//             //quando il contatore è a 6 va da marianna 
+//         }else{
+//             window.location.href = "results.html"//INSERIRE QUI FUNZIONE PER SEZIONE 4
+//         }
         
-        let domandeFatte = document.querySelector(".questionsDone")
-        domandeFatte.textContent = numeroDomande
+//         let domandeFatte = document.querySelector(".questionsDone")
+//         domandeFatte.textContent = numeroDomande
 
 
-        //Refresh ogni 40 secondi
-        setTimeout(function(){
-            window.location.reload()
-        },40000)
-        //funzione per il timer figurativa perchè non è effettivamente collegata al timer 
+//         //Refresh ogni 40 secondi
+//         setTimeout(function(){
+//             window.location.reload()
+//         },40000)
+//         //funzione per il timer figurativa perchè non è effettivamente collegata al timer 
         
-    })
+//     })
     
-}
+// }
 
 //--------------------------------------------------SEZIONE 4---
 function resultsPage() {
