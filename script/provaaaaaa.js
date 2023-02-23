@@ -90,7 +90,7 @@ let wrongAnswersElement = document.getElementById("wrongQuestions") //lascia per
 
 
 let counter = 0
-let correctAnswer = 0 //lascia perdere
+let correctAnswers = 0 //lascia perdere
 let wrongAnswers = 0//lascia perdere
 
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
@@ -134,10 +134,9 @@ let answers = [...randomQuestion.wrongAnswers, randomQuestion.rightAnswer]
 answerButtons.forEach((button, index) => {
     button.innerText = answers[index]
     button.dataset.correct = (answers[index] === randomQuestion.rightAnswer)
-  
 
     //QUESTO NON FUNZIONA
-
+    
     button.addEventListener("click", function() {
         if (button.dataset.correct === "true") { // ???????????????????????????????????
             // Incrementa il contatore per le risposte corrette
@@ -148,13 +147,13 @@ answerButtons.forEach((button, index) => {
             wrongAnswers++;
         }
     });
-
     
 });
 
 }
 
 });
+
 
 
 //CERCHIO PERCENTUALE RISPOSTE MARI - SE FUNZIONASSE...
