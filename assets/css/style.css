@@ -397,7 +397,7 @@ svg {
     max-height: fit-content;
 }
 
-[r] {
+/* [r] {
     fill: none;
     stroke: silver;
 }
@@ -408,7 +408,7 @@ svg {
     stroke: #00ffff;
     animation: arc 40s linear infinite;
     animation-name: arc, col;
-}
+} */
 
 /*keyframes per cambio colore del timer/
 

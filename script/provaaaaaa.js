@@ -96,7 +96,7 @@ let wrongAnswersElement = document.getElementById("wrongQuestions") //lascia per
 
 
 let counter = 0
-let correctAnswer = 0 //lascia perdere
+//let correctAnswer = 0 //lascia perdere
 let wrongAnswers = 0//lascia perdere
 
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
@@ -177,12 +177,15 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-let input = document.querySelector('.percentuale');
-setProgress(input.value);
 
-input.addEventListener('change', function (e) {
-    if (input.value < 101 && input.value > 0) {
-        setProgress(input.value);
+let correctPercentage = document.getElementById("correctPercentage");
+correctPercentage.innerText = `${correctAnswers} %`;
+
+setProgress(correctAnswers);
+
+correctAnswers.addEventListener('change', function (e) {
+    if (correctAnswers < 101 && correctAnswers> 0) {
+        setProgress(correctAnswers);
     }
 })
 
@@ -191,11 +194,9 @@ let topMessage = document.getElementById('topMessage');
 let middleMessage = document.getElementById('middleMessage');
 let underMessage = document.getElementById('underMessage');
 
-input.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        let percentage = Number(inputPercentuale.value);
+correctAnswers.addEventListener('keydown', function () {
         function message() {
-            if (percentage >= 60) {
+            if (correctAnswers >= 60) {
                 topMessage.innerText = 'Congratulations!';
                 middleMessage.innerText = 'You passed the exam.';
                 underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
@@ -206,5 +207,4 @@ input.addEventListener('keydown', function (event) {
             }
         }
         message();
-    }
 })
