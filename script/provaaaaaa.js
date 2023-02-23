@@ -1,4 +1,16 @@
-function stellacoloratorMarkII() {
+let input = document.querySelector('input');
+let array1 = [];
+
+localStorage.getItem('items', JSON.stringify(array1));
+
+let bottone = document.getElementById('btn-to-welcome')
+
+bottone.addEventListener('click', function salvare() {
+    array1.push(input.value);
+    localStorage.setItem('items', JSON.stringify(array1));    
+});
+//localStorage.clear();
+function stellacoloratorMarkII(){
     let stars = document.querySelectorAll('path');
     stars.forEach((star, index1) => {
         star.addEventListener('click', () => {
