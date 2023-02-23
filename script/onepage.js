@@ -14,7 +14,7 @@ function indexPage(){
     main.appendChild(divbtn);
     btn.addEventListener('click', function(){
         welcomeCreate();
-        //main.setAttribute('id','ic');
+        main.setAttribute('id','ic');
       });
 }
 indexPage()
