@@ -126,40 +126,34 @@ document.getElementById("il-bottone-dei-bottoni").addEventListener("click", func
 
         correctAnswersElement.innerText = correctAnswers //serve per far displayare le risposte corrette da marianna
         wrongAnswersElement.innerText = wrongAnswers //uguale che a sopra
+        console.log(correctAnswers) //crea un array 
+        console.log(wrongAnswers) //crea un array 
+        console.log(correctAnswersElement)
+        console.log(wrongAnswersElement)
 
     } else { //senno si randomizza domanda 
         // Scegli una domanda casuale dall'array
         let randomQuestion = questions[Math.floor(Math.random() * questions.length)]
-
-        // Aggiorna il testo della domanda
         questionElement.innerText = randomQuestion.question
         questions.splice(questions.findIndex(i => i.question === randomQuestion.question), 1);
 
         // Crea un array con tutte le risposte (giusta e sbagliate ps: si può fare solo in questo modo ) 
         let answers = [...randomQuestion.wrongAnswers, randomQuestion.rightAnswer]
-        
-        // QUESTO è per randomizzare le risposte trovato su internet quello che abbaimo fatto l'altro giorno non fuzniona piu e in più IN TEORIA dovrebbe salvare le risposte giuste con dataset ma non funge 
+
         answerButtons.forEach((button, index) => {
             button.innerText = answers[index]
             button.dataset.correct = (answers[index] === randomQuestion.rightAnswer)
-
-
-            //QUESTO NON FUNZIONA
-
             button.addEventListener("click", function () {
-                if (button.dataset.correct === "true") { // ???????????????????????????????????
-                    // Incrementa il contatore per le risposte corrette
-                    correctAnswers++;
+                if (button.dataset.correct === "true") { 
+                    correctAnswers.length++;
+                    
                 }
                 else {
-                    // Incrementa il contatore per le risposte sbagliate
-                    wrongAnswers++;
+                    wrongAnswers.length++;
                 }
             });
-
-
         });
-
+        //TEORICAMENTE HA SENSO QUELLO CHE C'E SCRITTO QUI SOPRA, MA NON RIESCO A CAPIRE COME E SE MODIFICARLO
     }
 
 });
@@ -179,31 +173,30 @@ function setProgress(percent) {
     circle.style.strokeDashoffset = offset;
 }
 
-
 let correctPercentage = document.getElementById("correctPercentage");
-correctPercentage.innerText = `${correctAnswers.length*10} %`;
+correctPercentage.innerText = `${correctAnswersElement} %`;
 let wrongPercentage = document.getElementById("wrongPercentage");
-wrongPercentage.innerText = `${wrongAnswers.length*10} %`;
+wrongPercentage.innerText = `${wrongAnswersElement} %`;
 
-setProgress(correctAnswers);
+setProgress(correctAnswers.length*10);
 
-if (correctAnswers < 101 && correctAnswers > 0) {
-    setProgress(correctAnswers);
+if (correctAnswers < 101 && correctAnswers >= 0) {
+    setProgress(correctAnswers.length*10);
 }
 
-let topMessage = document.getElementById('topMessage');
-let middleMessage = document.getElementById('middleMessage');
-let underMessage = document.getElementById('underMessage');
+// let topMessage = document.getElementById('topMessage');
+// let middleMessage = document.getElementById('middleMessage');
+// let underMessage = document.getElementById('underMessage');
 
-function message() {
-    if (correctAnswers.lenght*10 >= 60) {
-        topMessage.innerText = 'Congratulations!';
-        middleMessage.innerText = 'You passed the exam.';
-        underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
-    } else {
-        topMessage.innerText = 'We\'re sorry';
-        middleMessage.innerText = 'You did not pass the exam.';
-        underMessage.innerText = 'Check your email (including the promotions/spam folder)';
-    }
-}
-message();
+// function message() {
+//     if (correctAnswers.length*10 >= 60) {
+//         topMessage.innerText = 'Congratulations!';
+//         middleMessage.innerText = 'You passed the exam.';
+//         underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
+//     } else {
+//         topMessage.innerText = 'We\'re sorry';
+//         middleMessage.innerText = 'You did not pass the exam.';
+//         underMessage.innerText = 'Check your email (including the promotions/spam folder)';
+//     }
+// }
+// message();
