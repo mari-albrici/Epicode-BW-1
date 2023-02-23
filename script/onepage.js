@@ -67,7 +67,7 @@ function welcomeCreate(){
     label.setAttribute('for', 'checkbox');
     input.setAttribute('type', 'checkbox');
     input.setAttribute('id', 'checkbox');
-    // input.setAttribute(' ','required');
+    input.required = true;
     btn.innerHTML = 'START TEST';
     btn.classList.add('btnToTest');
     btn.addEventListener('click', function(){
@@ -146,8 +146,6 @@ function timer(){
     page.append(timerDiv);
     
 }
-
-
 
 function createHTML(){
     //timer
@@ -288,7 +286,8 @@ function validate(){
             numeroDomande++
             //quando il contatore è a 6 va da marianna 
         }else{
-            window.location.href = "results.html"//INSERIRE QUI FUNZIONE PER SEZIONE 4
+            resultsPage();
+            main3.setAttribute('id', 'ic')//INSERIRE QUI FUNZIONE PER SEZIONE 4
         }
         
         let domandeFatte = document.querySelector(".questionsDone")
