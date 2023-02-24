@@ -210,6 +210,7 @@ h1 p {
     animation-name: arc, col;
 } */
 
+
 /*keyframes per cambio colore del timer*/
 
 @keyframes arc {
@@ -376,22 +377,20 @@ h1 p {
     padding-top: 15px;
 }
 
-svg {
+#progress-ring {
     width: 650px;
     height: 650px;
 }
 
-.progress-ring__circle {
+#progress-ring__circle {
     transition: 0.35s stroke-dashoffset;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
-}
-
-circle {
     stroke: #00ffff;
     stroke-width: 65px;
     fill: transparent;
 }
+
 
 .percentuale {
     height: 40px;
