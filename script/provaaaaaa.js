@@ -36,7 +36,7 @@ let questions = [
     wrongAnswers: ["5", "25", "1"],
   },
   {
-    question: "Qual'è la pizza preferita di Michele?",
+    question: "Qual è la pizza preferita di Michele?",
     rightAnswer: "Diavola",
     wrongAnswers: ["Margherita", "Hawaiana", "Capricciosa"],
   },
