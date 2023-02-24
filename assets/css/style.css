@@ -213,7 +213,7 @@ h1 p {
 
 /*keyframes per cambio colore del timer*/
 
-@keyframes arc {
+/* @keyframes arc {
     0% {
         stroke-dashoffset: 0px;
     }
@@ -239,7 +239,7 @@ h1 p {
     100% {
         stroke: #d21212;
     }
-}
+} */
 
 /*RESULT*/
 
