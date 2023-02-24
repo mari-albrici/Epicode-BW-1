@@ -134,13 +134,13 @@ function startTime() {
     if (document.getElementById("andrea").style.display == "block") {
       if (timeLeft == 0) {
         counter++;
-        counterElement.innerHTML = "Domanda :" + counter;
+        counterElement.innerHTML = counter + "/" + `${totalQuestions} QUESTIONS`;
         clearInterval(rolexTimer);
         newQuestion();
       } else {
         timeLeft--;
         document.querySelector(".rolex").innerHTML =
-          timeLeft + " seconds remaining ";
+          timeLeft + " seconds remaining";
       }
     }
   }, 1000);
@@ -207,7 +207,7 @@ document
   .addEventListener("click", function () {
     startTime();
     counter++;
-    counterElement.innerHTML = "Domanda :" + counter;
+    counterElement.innerHTML = counter + " QUESTIONS";
     if (counter === 11) {
       //PROCEDI A RESULTS PAGE E AGGIORNA RISULTATI
       document.getElementById("matteo").style.display = "none";
@@ -225,8 +225,8 @@ document
         document.getElementById("correctQuestions");
       let numWrongAnswersElement = document.getElementById("wrongQuestions");
 
-      numCorrectAnswersElement.innerHTML = correctAnswers + "/10 questions";
-      numWrongAnswersElement.innerHTML = wrongAnswers + "/10 questions";
+      numCorrectAnswersElement.innerHTML = correctAnswers + "/" + `${totalQuestions} QUESTIONS`;
+      numWrongAnswersElement.innerHTML = wrongAnswers + "/" + `${totalQuestions} QUESTIONS`;
 
       // Aggiorna il contenuto degli elementi HTML che visualizzano le percentuali di risposte corrette e sbagliate
       let correctPercentageElement =
@@ -296,22 +296,3 @@ if (correctAnswers < 101 && correctAnswers > 0) {
   setProgress(correctAnswers);
 }
 
-//DISPLAY MESSAGGIO RISULTATO ESAME
-let topMessage = document.getElementById("topMessage");
-let middleMessage = document.getElementById("middleMessage");
-let underMessage = document.getElementById("underMessage");
-
-function message() {
-  if (correctAnswers.length * 10 >= 60) {
-    topMessage.innerText = "Congratulations!";
-    middleMessage.innerText = "You passed the exam.";
-    underMessage.innerText =
-      "We'll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)";
-  } else {
-    topMessage.innerText = "We're sorry.";
-    middleMessage.innerText = "You did not pass the exam.";
-    underMessage.innerText =
-      "Check your email (including the promotions/spam folder)";
-  }
-}
-message();

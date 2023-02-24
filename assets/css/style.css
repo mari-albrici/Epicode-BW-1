@@ -55,7 +55,7 @@ button:hover {
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 3rem;
-    line-height: 0.5rem;
+    line-height: 3rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
 }
@@ -73,6 +73,13 @@ button:hover {
 
 .text {
     font-size: 18px;
+    line-height: 1.5rem;
+}
+
+#instructions-heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
 }
 
 ul {
@@ -244,7 +251,7 @@ h1 p {
 /*RESULT*/
 
 #titolone {
-    line-height: 0.8rem;
+    line-height: 2rem;
     margin-bottom: 0;
 }
 
@@ -264,7 +271,7 @@ h1 p {
 }
 
 #correct, #wrong {
-    line-height: 0.8rem;
+    line-height: 3rem;
 }
 
 #correctTitle {
@@ -398,6 +405,10 @@ h1 p {
     font-weight: 400;
 }
 
+#epicode-link {
+    text-decoration: none;
+    color: white;
+}
 
 /*FEEDBACK*/
 .containar_principale {
