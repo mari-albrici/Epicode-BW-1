@@ -112,7 +112,7 @@ document.getElementById("btn-to-test").addEventListener("click", function () {
 
 //TIMER
 
-// let countDownTotal = 10 + 2;
+
 
 let timeLeft = 10;
 let rolex = document.querySelector('.rolex')
@@ -208,16 +208,17 @@ nextQuestionButton.addEventListener("click", function () {
   answerButtons.forEach(function(button) {
     button.classList.remove("selected")
   });
-  
-
 });
+
+
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
 document
   .getElementById("il-bottone-dei-bottoni")
   .addEventListener("click", function () {
     startTime();
-    
-    if (counter === 11) {
+    counter++;
+        counterElement.innerHTML = "Domanda :" + counter;
+    if (counter === 11){
       //si va da marianna
       document.getElementById("matteo").style.display = "none";
       document.getElementById("andrea").style.display = "none";
@@ -227,7 +228,7 @@ document
 
       correctAnswersElement.innerText = correctAnswers; //serve per far displayare le risposte corrette da marianna
       wrongAnswersElement.innerText = wrongAnswers; //uguale che a sopra
-    } else {
+    }else {
       //senno si randomizza domanda
       // Scegli una domanda casuale dall'array
       let randomQuestion =
