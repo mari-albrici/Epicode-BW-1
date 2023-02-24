@@ -112,40 +112,39 @@ document.getElementById("btn-to-test").addEventListener("click", function () {
 
 //TIMER
 
-let countDownTotal = 10 + 2;
-let clock = 1;
-let timeLeft;
-let rolex = document.querySelector('.rolex')
+// let countDownTotal = 10 + 2;
 
-let rolexTimer =  setInterval(function () {
+let timeLeft = 10;
+let rolex = document.querySelector('.rolex')
+let rolexTimer;
+
+function startTime(){
+    if(rolexTimer){
+        clearInterval(rolexTimer);
+        timeLeft = 10;
+    }
+    rolexTimer =  setInterval(function () {
     if(document.getElementById("andrea").style.display == "block"){
         if (timeLeft == 0 ) {
         counter++;
         counterElement.innerHTML = "Domanda :" + counter;
         clearInterval(rolexTimer);
         newQuestion();
-        //domanda invalidata
-        
         } else {
-        for (i = 0; i <= countDownTotal; i++) {
-        clock += 1;
-        timeLeft = countDownTotal - clock;
+        console.log(timeLeft);
+        timeLeft--;
         document.querySelector(".rolex").innerHTML = timeLeft + " seconds remaining ";
-        return timeLeft;
-        }  
-        
         }
     }
 }, 1000)
-;
+}
 
+startTime();
 
 
 
 let newQuestion = function () {
-    
-    
-
+    startTime();
     let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
     questionElement.innerText = randomQuestion.question;
     questions.splice(
@@ -216,9 +215,8 @@ nextQuestionButton.addEventListener("click", function () {
 document
   .getElementById("il-bottone-dei-bottoni")
   .addEventListener("click", function () {
-    counter++;
-    counterElement.innerHTML = counter + "/10";
-
+    startTime();
+    
     if (counter === 11) {
       //si va da marianna
       document.getElementById("matteo").style.display = "none";
