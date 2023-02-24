@@ -232,15 +232,15 @@ document
       let numCorrectAnswersElement = document.getElementById("correctQuestions");
       let numWrongAnswersElement = document.getElementById("wrongQuestions");
   
-      numCorrectAnswersElement.innerHTML = "Numero di risposte corrette: " + correctAnswers;
-      numWrongAnswersElement.innerHTML = "Numero di risposte sbagliate: " + wrongAnswers;
+      numCorrectAnswersElement.innerHTML = correctAnswers  + "/10 questions";
+      numWrongAnswersElement.innerHTML = wrongAnswers  + "/10 questions";
   
       // Aggiorna il contenuto degli elementi HTML che visualizzano le percentuali di risposte corrette e sbagliate
       let correctPercentageElement = document.getElementById("correctPercentage");
       let wrongPercentageElement = document.getElementById("wrongPercentage");
   
-      correctPercentageElement.innerHTML = `Percentuale di risposte corrette: ${correctPercentage}%`;
-      wrongPercentageElement.innerHTML = `Percentuale di risposte sbagliate: ${wrongPercentage}%`;
+      correctPercentageElement.innerHTML = `${correctPercentage}%`;
+      wrongPercentageElement.innerHTML = `${wrongPercentage}%`;
   
       // Aggiorna il cerchio che mostra la percentuale di risposte corrette
       setProgress(correctPercentage);
