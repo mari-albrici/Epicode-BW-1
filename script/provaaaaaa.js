@@ -280,6 +280,12 @@ correctPercentage.innerText = `${correctAnswersElement} %`;
 let wrongPercentage = document.getElementById("wrongPercentage");
 wrongPercentage.innerText = `${wrongAnswersElement} %`;
 
+let numCorrectAnswersElement = document.getElementById("correctQuestions");
+let numWrongAnswersElement = document.getElementById("wrongQuestions");
+
+numCorrectAnswersElement.innerHTML = "Numero di risposte corrette: " + correctAnswers;
+numWrongAnswersElement.innerHTML = "Numero di risposte sbagliate: " + wrongAnswers;
+
 setProgress(correctAnswers.length*10);
 
 if (correctAnswers < 101 && correctAnswers > 0) {
