@@ -1,3 +1,7 @@
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+
 let input = document.querySelector('input');
 let array1 = [];
 
@@ -131,7 +135,6 @@ function startTime(){
         clearInterval(rolexTimer);
         newQuestion();
         } else {
-        console.log(timeLeft);
         timeLeft--;
         document.querySelector(".rolex").innerHTML = timeLeft + " seconds remaining ";
         }
@@ -167,8 +170,6 @@ let counterElement = document.getElementById("counter");
 let nextQuestionButton = document.getElementById("il-bottone-dei-bottoni");
 
 let counter = 0;
-let correctAnswers = 0;
-let wrongAnswers = 0;
 
 answerButtons.forEach((button) => {
   button.addEventListener("click", function () {
@@ -224,6 +225,40 @@ document
 
       document.getElementById("marianna").style.display = "block";
 
+      let totalQuestions = correctAnswers + wrongAnswers;
+      let correctPercentage = Math.round((correctAnswers / totalQuestions) * 100);
+      let wrongPercentage = Math.round((wrongAnswers / totalQuestions) * 100);
+
+      let numCorrectAnswersElement = document.getElementById("correctQuestions");
+      let numWrongAnswersElement = document.getElementById("wrongQuestions");
+  
+      numCorrectAnswersElement.innerHTML = "Numero di risposte corrette: " + correctAnswers;
+      numWrongAnswersElement.innerHTML = "Numero di risposte sbagliate: " + wrongAnswers;
+  
+      // Aggiorna il contenuto degli elementi HTML che visualizzano le percentuali di risposte corrette e sbagliate
+      let correctPercentageElement = document.getElementById("correctPercentage");
+      let wrongPercentageElement = document.getElementById("wrongPercentage");
+  
+      correctPercentageElement.innerHTML = `Percentuale di risposte corrette: ${correctPercentage}%`;
+      wrongPercentageElement.innerHTML = `Percentuale di risposte sbagliate: ${wrongPercentage}%`;
+  
+      // Aggiorna il cerchio che mostra la percentuale di risposte corrette
+      setProgress(correctPercentage);
+      
+      // Visualizza un messaggio in base alla percentuale di risposte corrette
+      let topMessage = document.getElementById('topMessage');
+      let middleMessage = document.getElementById('middleMessage');
+      let underMessage = document.getElementById('underMessage');
+  
+      if (correctPercentage >= 60) {
+          topMessage.innerText = 'Congratulations!';
+          middleMessage.innerText = 'You passed the exam.';
+          underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)';
+        } else {
+          topMessage.innerText = 'We\'re sorry.';
+          middleMessage.innerText = 'You did not pass the exam.';
+          underMessage.innerText = 'Check your email (including the promotions/spam folder)';
+      }
     //   correctAnswersElement.innerText = correctAnswers; //serve per far displayare le risposte corrette da marianna
     //   wrongAnswersElement.innerText = wrongAnswers; //uguale che a sopra
     }else {
@@ -245,17 +280,8 @@ document
         answerButtons.forEach((button, index) => {
             button.innerText = answers[index]
             button.dataset.correct = (answers[index] === randomQuestion.rightAnswer)
-            button.addEventListener("click", function () {
-                if (button.dataset.correct === "true") { 
-                    correctAnswers.length++;
-                    
-                }
-                else {
-                    wrongAnswers.length++;
-                }
-            });
+            
         });
-        //TEORICAMENTE HA SENSO QUELLO CHE C'E SCRITTO QUI SOPRA, MA NON RIESCO A CAPIRE COME E SE MODIFICARLO
     }
   });
 
@@ -274,9 +300,9 @@ function setProgress(n) {
 }
 
 let correctPercentage = document.getElementById("correctPercentage");
-correctPercentage.innerText = `${correctAnswersElement} %`;
+correctPercentage.innerText = `${correctAnswers} %`;
 let wrongPercentage = document.getElementById("wrongPercentage");
-wrongPercentage.innerText = `${wrongAnswersElement} %`;
+wrongPercentage.innerText = `${wrongAnswers} %`;
 
 let numCorrectAnswersElement = document.getElementById("correctQuestions");
 let numWrongAnswersElement = document.getElementById("wrongQuestions");
