@@ -10,16 +10,6 @@ bottone.addEventListener('click', function salvare() {
     localStorage.setItem('items', JSON.stringify(array1));    
 });
 //localStorage.clear();
-function stellacoloratorMarkII(){
-    let stars = document.querySelectorAll('path');
-    stars.forEach((star, index1) => {
-        star.addEventListener('click', () => {
-            stars.forEach((star, index2) => {
-                index1 >= index2 ? star.classList.add('active') : star.classList.remove('active');
-            })
-        })
-    })
-} stellacoloratorMarkII()
 function stellacoloratorMarkII() {
   let stars = document.querySelectorAll("path");
   stars.forEach((star, index1) => {
@@ -33,6 +23,7 @@ function stellacoloratorMarkII() {
   });
 }
 stellacoloratorMarkII();
+
 let questions = [
   {
     question: "Qual è il tuo nome?",
@@ -130,24 +121,26 @@ let rolexTimer = setInterval(function () {
     if(document.getElementById("andrea").style.display == "block"){
   if (timeLeft === 0 ) {
     counter++;
-    counterElement.innerHTML = "Domanda :" + counter;
+    counterElement.innerHTML = counter + "/10";
     clearInterval(rolexTimer);
-    
-    //domanda invalidata
-    return newQuestion();
+    return newQuestion() ;
   } else {
-    for (i = 0; i <= countDownTotal; i++) {
-      clock += 1;
-      timeLeft = countDownTotal - clock;
-      document.querySelector(".rolex").innerHTML =
-        timeLeft + " seconds remaining ";
-      return timeLeft;
-    }
+    timer()
   }}
 }, 1000);
 
+let timer = () => {
+    for (i = 0; i <= countDownTotal; i++) {
+        clock += 1;
+        timeLeft = countDownTotal - clock;
+        document.querySelector(".rolex").innerHTML =
+          timeLeft + " seconds remaining ";
+        return timeLeft;
+      }
+      return timer()
+}
+
 let newQuestion = function () {
-    
   let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
   questionElement.innerText = randomQuestion.question;
   questions.splice(
@@ -174,6 +167,8 @@ let newQuestion = function () {
     });
   });
 };
+
+
 // Seleziona gli elementi HTML che devono essere aggiornati
 let questionElement = document.getElementById("question");
 let answerButtons = document.querySelectorAll(".answer-buttons");
@@ -217,7 +212,7 @@ document
   .getElementById("il-bottone-dei-bottoni")
   .addEventListener("click", function () {
     counter++;
-    counterElement.innerHTML = "Domanda :" + counter;
+    counterElement.innerHTML = counter + "/10";
 
     if (counter === 11) {
       //si va da marianna
@@ -287,19 +282,19 @@ if (correctAnswers < 101 && correctAnswers > 0) {
     setProgress(correctAnswers);
 }
 
-// let topMessage = document.getElementById('topMessage');
-// let middleMessage = document.getElementById('middleMessage');
-// let underMessage = document.getElementById('underMessage');
+let topMessage = document.getElementById('topMessage');
+let middleMessage = document.getElementById('middleMessage');
+let underMessage = document.getElementById('underMessage');
 
-// function message() {
-//     if (correctAnswers.length*10 >= 60) {
-//         topMessage.innerText = 'Congratulations!';
-//         middleMessage.innerText = 'You passed the exam.';
-//         underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
-//     } else {
-//         topMessage.innerText = 'We\'re sorry';
-//         middleMessage.innerText = 'You did not pass the exam.';
-//         underMessage.innerText = 'Check your email (including the promotions/spam folder)';
-//     }
-// }
-// message();
+function message() {
+    if (correctAnswers.length*10 >= 60) {
+        topMessage.innerText = 'Congratulations!';
+        middleMessage.innerText = 'You passed the exam.';
+        underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
+    } else {
+        topMessage.innerText = 'We\'re sorry';
+        middleMessage.innerText = 'You did not pass the exam.';
+        underMessage.innerText = 'Check your email (including the promotions/spam folder)';
+    }
+}
+message();
