@@ -112,60 +112,62 @@ document.getElementById("btn-to-test").addEventListener("click", function () {
 
 //TIMER
 
-var countDownTotal = 10 + 2;
+let countDownTotal = 10 + 2;
 let clock = 1;
 let timeLeft;
 let rolex = document.querySelector('.rolex')
 
-let rolexTimer = setInterval(function () {
+let rolexTimer =  setInterval(function () {
     if(document.getElementById("andrea").style.display == "block"){
-  if (timeLeft === 0 ) {
-    counter++;
-    counterElement.innerHTML = counter + "/10";
-    clearInterval(rolexTimer);
-    return newQuestion() ;
-  } else {
-    timer()
-  }}
-}, 1000);
-
-let timer = () => {
-    for (i = 0; i <= countDownTotal; i++) {
+        if (timeLeft == 0 ) {
+        counter++;
+        counterElement.innerHTML = "Domanda :" + counter;
+        clearInterval(rolexTimer);
+        newQuestion();
+        //domanda invalidata
+        
+        } else {
+        for (i = 0; i <= countDownTotal; i++) {
         clock += 1;
         timeLeft = countDownTotal - clock;
-        document.querySelector(".rolex").innerHTML =
-          timeLeft + " seconds remaining ";
+        document.querySelector(".rolex").innerHTML = timeLeft + " seconds remaining ";
         return timeLeft;
-      }
-      return timer()
-}
+        }  
+        
+        }
+    }
+}, 1000)
+;
+
+
+
 
 let newQuestion = function () {
-  let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-  questionElement.innerText = randomQuestion.question;
-  questions.splice(
-    questions.findIndex((i) => i.question === randomQuestion.question),
-    1
-  );
-  
-  let answers = [...randomQuestion.wrongAnswers, randomQuestion.rightAnswer];
+    
+    
+
+    let randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+    questionElement.innerText = randomQuestion.question;
+    questions.splice(
+    questions.findIndex((i) => i.question === randomQuestion.question),1);
+
+    let answers = [...randomQuestion.wrongAnswers, randomQuestion.rightAnswer];
     answerButtons.forEach((button, index) => {
     button.innerText = answers[index];
     button.dataset.correct = answers[index] === randomQuestion.rightAnswer;
 
     //QUESTO NON FUNZIONA
-
     button.addEventListener("click", function () {
-      if (button.dataset.correct === "true") {
+        if (button.dataset.correct === "true") {
         // ???????????????????????????????????
         // Incrementa il contatore per le risposte corrette
         correctAnswers++;
-      } else {
+        } else {
         // Incrementa il contatore per le risposte sbagliate
         wrongAnswers++;
-      }
+        }
+        });
     });
-  });
 };
 
 
