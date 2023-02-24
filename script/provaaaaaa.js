@@ -156,17 +156,6 @@ let newQuestion = function () {
     button.innerText = answers[index];
     button.dataset.correct = answers[index] === randomQuestion.rightAnswer;
 
-    //QUESTO NON FUNZIONA
-    button.addEventListener("click", function () {
-        if (button.dataset.correct === "true") {
-        // ???????????????????????????????????
-        // Incrementa il contatore per le risposte corrette
-        correctAnswers++;
-        } else {
-        // Incrementa il contatore per le risposte sbagliate
-        wrongAnswers++;
-        }
-        });
     });
 };
 
@@ -180,8 +169,22 @@ let wrongAnswersElement = document.getElementById("wrongQuestions"); //lascia pe
 let nextQuestionButton = document.getElementById("il-bottone-dei-bottoni");
 
 let counter = 0;
-let correctAnswers = [];
-let wrongAnswers = [];
+let correctAnswers = 0;
+let wrongAnswers = 0;
+
+answerButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    if (button.dataset.correct === "true") {
+      correctAnswers++;
+      console.log("Risposte corrette:", correctAnswers);
+    } else {
+      wrongAnswers++;
+      console.log("Risposte sbagliate:", wrongAnswers);
+    }
+  });
+});
+correctAnswersElement.innerText = correctAnswers;
+wrongAnswersElement.innerText = wrongAnswers;
 
 answerButtons.forEach(function(button) {
   button.addEventListener("click", function () {
