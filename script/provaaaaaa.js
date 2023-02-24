@@ -163,8 +163,7 @@ let newQuestion = function () {
 let questionElement = document.getElementById("question");
 let answerButtons = document.querySelectorAll(".answer-buttons");
 let counterElement = document.getElementById("counter");
-let correctAnswersElement = document.getElementById("correctQuestions"); //lascia perdere
-let wrongAnswersElement = document.getElementById("wrongQuestions"); //lascia perdere
+
 let nextQuestionButton = document.getElementById("il-bottone-dei-bottoni");
 
 let counter = 0;
@@ -182,8 +181,7 @@ answerButtons.forEach((button) => {
     }
   });
 });
-correctAnswersElement.innerText = correctAnswers;
-wrongAnswersElement.innerText = wrongAnswers;
+
 
 answerButtons.forEach(function(button) {
   button.addEventListener("click", function () {
@@ -226,8 +224,8 @@ document
 
       document.getElementById("marianna").style.display = "block";
 
-      correctAnswersElement.innerText = correctAnswers; //serve per far displayare le risposte corrette da marianna
-      wrongAnswersElement.innerText = wrongAnswers; //uguale che a sopra
+    //   correctAnswersElement.innerText = correctAnswers; //serve per far displayare le risposte corrette da marianna
+    //   wrongAnswersElement.innerText = wrongAnswers; //uguale che a sopra
     }else {
       //senno si randomizza domanda
       // Scegli una domanda casuale dall'array
@@ -270,17 +268,24 @@ var circumference = radius * 2 * Math.PI;
 circle.style.strokeDasharray = `${circumference} ${circumference}`;
 circle.style.strokeDashoffset = `${circumference}`;
 
-function setProgress(percent) {
-  const offset = circumference - (percent / 100) * circumference;
+function setProgress(n) {
+  const offset = circumference - (n / 100) * circumference;
   circle.style.strokeDashoffset = offset;
 }
 
-let correctPercentage = document.getElementById("correctPercentage");
-correctPercentage.innerText = `${correctAnswersElement} %`;
-let wrongPercentage = document.getElementById("wrongPercentage");
-wrongPercentage.innerText = `${wrongAnswersElement} %`;
+let correctPercentage = document.querySelector("#correctPercentage");
+    correctPercentage.innerText = `${correctAnswers} %`;
 
-setProgress(correctAnswers.length*10);
+let correctQuestions = document.querySelector("#correctQuestions");
+    correctQuestions.innerText = correctAnswers;
+
+let wrongPercentage = document.querySelector("#wrongPercentage");
+    wrongPercentage.innerText = `${wrongAnswers} %`;
+
+let wrongQuestions = document.querySelector("#wrongQuestions");
+    wrongQuestions.innerText = wrongAnswers;
+
+setProgress(correctAnswers*10);
 
 if (correctAnswers < 101 && correctAnswers > 0) {
     setProgress(correctAnswers);
@@ -296,7 +301,7 @@ function message() {
         middleMessage.innerText = 'You passed the exam.';
         underMessage.innerText = 'We\'ll send you the certificate in a few minutes. Check your email (including the promotions/spam folder)'
     } else {
-        topMessage.innerText = 'We\'re sorry';
+        topMessage.innerText = 'We\'re sorry.';
         middleMessage.innerText = 'You did not pass the exam.';
         underMessage.innerText = 'Check your email (including the promotions/spam folder)';
     }
