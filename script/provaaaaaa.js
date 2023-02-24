@@ -118,14 +118,15 @@ document.getElementById("btn-to-test").addEventListener("click", function () {
 
 
 
-let timeLeft = 10;
+let timeLeft = 40;
 let rolex = document.querySelector('.rolex')
 let rolexTimer;
 
 function startTime(){
+    
     if(rolexTimer){
         clearInterval(rolexTimer);
-        timeLeft = 10;
+        timeLeft = 40;
     }
     rolexTimer =  setInterval(function () {
     if(document.getElementById("andrea").style.display == "block"){
