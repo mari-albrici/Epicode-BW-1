@@ -180,11 +180,38 @@ let answerButtons = document.querySelectorAll(".answer-buttons");
 let counterElement = document.getElementById("counter");
 let correctAnswersElement = document.getElementById("correctQuestions"); //lascia perdere
 let wrongAnswersElement = document.getElementById("wrongQuestions"); //lascia perdere
+let nextQuestionButton = document.getElementById("il-bottone-dei-bottoni");
 
 let counter = 0;
 let correctAnswers = [];
 let wrongAnswers = [];
 
+answerButtons.forEach(function(button) {
+  button.addEventListener("click", function () {
+    // Rimuovi la classe 'selected' da tutti gli altri bottoni
+    answerButtons.forEach(function(otherButton) {
+      if (otherButton !== button) {
+        otherButton.classList.remove("selected")
+      }
+    });
+
+    // Aggiungi o rimuovi la classe 'selected' dal bottone cliccato
+    if (button.classList.contains("selected")) {
+      button.classList.remove("selected")
+    } else {
+      button.classList.add("selected")
+    }
+  });
+});
+
+nextQuestionButton.addEventListener("click", function () {
+  // Rimuovi la classe 'selected' da tutti i bottoni
+  answerButtons.forEach(function(button) {
+    button.classList.remove("selected")
+  });
+  
+
+});
 // Aggiungi un evento al pulsante "Il bottone dei bottoni" per generare una nuova domanda
 document
   .getElementById("il-bottone-dei-bottoni")

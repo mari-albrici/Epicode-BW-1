@@ -144,6 +144,11 @@ h1 p {
     border-radius: 30px;
     
 }
+.answer-buttons.selected{
+    background-color: #0ff;
+    color: black;
+    filter: drop-shadow(5px 5px 50px #0ff);
+}
 
 /*.wa0 {
     width: 380px;
